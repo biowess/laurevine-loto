@@ -1,0 +1,7 @@
+/* Fenced code language popover (Insert > Code & Mathematics) */
+.ct-pop { width: 240px; display: flex; flex-direction: column; padding: 6px; gap: 4px; }
+.ct-q { width: 100%; box-sizing: border-box; padding: 5px 8px; font: inherit; color: var(--text); background: var(--bg); border: 1px solid var(--border-2); border-radius: var(--r); }
+.ct-list { overflow: auto; max-height: 250px; display: flex; flex-direction: column; }
+.ct-head { padding: 6px 8px 2px; font-size: 11px; text-transform: uppercase; letter-spacing: .04em; color: var(--text-muted, var(--text)); opacity: .7; }
+.ct-opt { text-align: left; padding: 5px 8px; font: inherit; color: var(--text); background: none; border: 0; border-radius: var(--r); cursor: pointer; }
+.ct-opt:hover, .ct-opt:focus-visible { background: var(--hover, rgba(127, 127, 127, .15)); outline: none; }

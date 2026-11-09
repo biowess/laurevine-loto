@@ -1,0 +1,55 @@
+/* Consistency sweep: radius tokens, unified toasts, AA-safe text colours and Lucide-drawn indicators. Loaded last; does not restyle the design language. */
+:root {
+  --lucide-chevron-right: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m9 18 6-6-6-6'/%3E%3C/svg%3E");
+  --lucide-chevron-down: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  --lucide-check-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E");
+  --lucide-check-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231B1A16' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E");
+}
+
+/* radius tokens: controls --r, cards and inputs --r-md, dialogs and panels --r-lg, pills --r-pill */
+.dlg, .lv-drop__box { border-radius: var(--r); }
+.ex-btn, .lv-toast__btn, .rd-bar__x { border-radius: var(--r); }
+.badge, .sb-main, .chip, .lv-badge, .lv-tag, .lv-pf__rs, .lv-int__badge, .lv-chip, .lv-mig__steps li { border-radius: var(--r-pill); }
+
+/* toasts: message first, icon and actions ordered visually, one close control */
+.toast { gap: var(--sp-2); box-shadow: var(--shadow-pop), inset 3px 0 0 var(--toast-k, transparent); }
+.toast--success { --toast-k: #A9D3AB; }
+.toast--warn { --toast-k: #E8C48A; }
+.toast--error { --toast-k: #F1B2A8; }
+.toast__msg { flex: 1; min-width: 0; overflow-wrap: anywhere; line-height: 1.35; }
+.toast__icon { order: -1; flex: none; }
+.toast--error .toast__icon { color: #F1B2A8; }
+.toast .lv-toast__btn { margin: 0; padding: 3px 8px; border: 0; background: transparent; color: #F1C9D0; font: inherit; font-weight: 600; }
+.toast .lv-toast__btn:hover { background: rgba(255, 255, 255, .12); }
+.toast__x { order: 9; flex: none; }
+.toast :focus-visible { outline: 2px solid #fff; outline-offset: 1px; }
+
+/* text on tinted fills uses the strong accent so every pairing stays at 4.5:1 or better */
+.rbtn.is-on, .rbtn[aria-expanded="true"], .sbtn.is-on, .sbtn[aria-pressed="true"], .sbtn[aria-expanded="true"], .sb-row.is-active, .sb-row.is-active span, .sb-row.is-active .ic,
+.menu__item:hover:not(:disabled), .menu__item:focus-visible, .rgroup--accent .rgroup__label, .thumb-item.is-active .thumb-item__num, .bs-item.is-active, .chip--btn:hover, .thumb-add:hover { color: var(--accent-d); }
+.pf__sev.is-error, .pf__note--err { color: var(--danger); }
+.pf__sev.is-warning { color: var(--warn); }
+[data-theme=dark] .badge, [data-theme=dark] .md-seg2 button.is-on, [data-theme=dark] .lv-fo.is-on, [data-theme=dark] .app-mark { color: #1B1A16; }
+[data-theme=dark] .btn--danger { background: #B3261E; border-color: #B3261E; color: #fff; }
+
+/* Lucide-drawn indicators replacing text glyphs */
+.ref--expand .ref__btn::after { content: ""; display: inline-block; flex: none; width: 12px; height: 12px; margin-left: 6px; vertical-align: middle; background-color: var(--text-2); -webkit-mask: var(--lucide-chevron-right) center / contain no-repeat; mask: var(--lucide-chevron-right) center / contain no-repeat; }
+.lv-pk summary::after { content: ""; float: right; width: 12px; height: 12px; margin-top: 3px; background-color: var(--text-2); -webkit-mask: var(--lucide-chevron-down) center / contain no-repeat; mask: var(--lucide-chevron-down) center / contain no-repeat; }
+.lv-mig__steps li.is-done::before { content: ""; background: var(--accent) var(--lucide-check-light) center / 12px no-repeat; border-color: var(--accent); }
+[data-theme=dark] .lv-mig__steps li.is-done::before { background-image: var(--lucide-check-dark); }
+.lv-warn-ic, .lv-ok-ic { display: inline-flex; vertical-align: middle; margin-right: 4px; }
+.lv-warn-ic .ic { color: var(--warn); }
+.lv-ok-ic .ic { color: var(--success); }
+
+/* global native select: theme-aware appearance matching .select/.input */
+:root { --chevron-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236F7075' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"); }
+[data-theme=dark] { --chevron-url: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ABA699' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"); }
+select:not(.c-select) { appearance: none; height: 30px; padding: 0 24px 0 8px; border: 1px solid var(--border-2); border-radius: var(--r); background: var(--surface) var(--chevron-url) right 6px center / 14px no-repeat; color: var(--text); font: inherit; font-size: 13px; outline: 0; min-width: 0; transition: border-color var(--t-fast), box-shadow var(--t-fast); }
+select:not(.c-select):hover { border-color: var(--border-2); background-color: var(--hover); }
+select:not(.c-select):focus { border-color: var(--accent); box-shadow: var(--focus-shadow); }
+select:not(.c-select):disabled { opacity: .45; cursor: default; }
+
+/* disabled state: any interactive control that is disabled must look unavailable */
+:where(button, .rbtn, .tbtn, .sbtn, .btn, .iconbtn):disabled,
+:where(button, .rbtn, .tbtn, .sbtn, .btn, .iconbtn)[aria-disabled="true"],
+:where(button, .rbtn, .tbtn, .sbtn, .btn, .iconbtn)[disabled] { opacity: .4; cursor: default; pointer-events: none; }

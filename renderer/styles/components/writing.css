@@ -1,0 +1,10 @@
+#src[data-lv=centered] .cm-content,#src[data-lv=reading] .cm-content{max-width:var(--lv-measure);margin-inline:auto}
+#src[data-lv=reading] .cm-content{line-height:1.8;font-size:1.05em}
+#src.lv-tw .cm-content{padding-block:var(--lv-tw-t,40vh) var(--lv-tw-b,40vh)}
+#src.lv-focus .cm-line{opacity:.32;transition:opacity .25s ease}
+#src.lv-focus .cm-line.lv-hot{opacity:1}
+#src.lv-focus .cm-activeLine{background:transparent}
+::highlight(lv-dim){color:color-mix(in srgb,var(--text) 38%,transparent)}
+.lv-row{display:flex;gap:8px}
+.lv-in{font:inherit;padding:6px 8px;border:1px solid var(--border,currentColor);border-radius:var(--r);background:transparent;color:inherit}
+@media (prefers-reduced-motion:reduce){#src.lv-focus .cm-line{transition:none}}

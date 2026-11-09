@@ -1,0 +1,7 @@
+.md[data-left=off] .md-left,.md[data-right=off] .md-right{visibility:hidden;min-width:0}
+.md[data-left=off] .md-grip[data-grip=left],.md[data-right=off] .md-grip[data-grip=right]{display:none}
+.md[data-status=off]{--status-h:0px}
+.md[data-status=off] .md-status{display:none}
+.md.is-resizing,.md.is-resizing *{cursor:col-resize;user-select:none}
+.md.is-resizing .md-side{transition:none}
+.md-grip:active{background:var(--accent-l);opacity:.7}

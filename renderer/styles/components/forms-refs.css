@@ -1,0 +1,60 @@
+/* ---------- themed checkboxes (every dialog, table and panel) ---------- */
+input[type="checkbox"] { -webkit-appearance: none; appearance: none; flex: none; margin: 0; display: inline-grid; place-content: center; vertical-align: middle; border: 1.5px solid color-mix(in srgb, var(--text-2) 65%, var(--surface)); border-radius: var(--r); background: var(--surface); cursor: pointer; transition: background-color .12s, border-color .12s, box-shadow .12s; }
+:where(input[type="checkbox"]) { width: 16px; height: 16px; }
+input[type="checkbox"]:hover:not(:disabled) { border-color: var(--accent); }
+input[type="checkbox"]:focus-visible { outline: 0; border-color: var(--accent); box-shadow: 0 0 0 3px var(--sel-border, transparent); }
+input[type="checkbox"]:checked, input[type="checkbox"]:indeterminate { background: var(--accent); border-color: var(--accent); }
+input[type="checkbox"]:disabled { opacity: .45; cursor: default; }
+:where(input[type="checkbox"]) { position: relative; }
+
+/* ---------- Import references ---------- */
+.dlg--imp .dlg__body { font-family: var(--font); }
+.imp__drop { display: flex; align-items: center; gap: 14px; padding: 14px 16px; border: 1.5px dashed var(--border-2); border-radius: var(--r); background: var(--app-bg); color: var(--text); font-family: var(--font); cursor: pointer; transition: border-color .15s, background-color .15s; }
+.imp__drop:hover, .imp__drop.is-over { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 8%, var(--surface)); }
+.imp__drop:focus-visible { outline: 0; border-color: var(--accent); box-shadow: 0 0 0 3px var(--sel-border, transparent); }
+.imp__dropico { flex: none; width: 38px; height: 38px; display: grid; place-items: center; border-radius: 50%; background: color-mix(in srgb, var(--accent) 14%, var(--surface)); color: var(--accent); }
+.imp__dropico .ic, .imp__dropico svg { width: 18px; height: 18px; }
+.imp__drop.is-over .imp__dropico { background: var(--accent); color: var(--surface); }
+.imp__droptxt { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; text-align: left; }
+.imp__droptxt b { font-size: 13px; font-weight: 600; }
+.imp__droptxt small { font-size: 11.5px; color: var(--text-2); }
+.imp__chips { flex: none; display: flex; gap: 5px; }
+.imp__chips i { font: normal 600 11px var(--mono); padding: 2px 7px; border: 1px solid var(--border-2); border-radius: 999px; background: var(--surface); color: var(--text-2); }
+.imp__label { display: flex; align-items: baseline; gap: 8px; margin: 16px 0 6px; font-size: 12px; font-weight: 600; color: var(--text); }
+.imp__label span { font-weight: 400; color: var(--text-2); }
+.imp__paste { display: block; width: 100%; box-sizing: border-box; padding: 8px 10px; font: 12px/1.5 var(--mono); color: var(--text); background: var(--surface); border: 1px solid var(--border-2); border-radius: var(--r); resize: vertical; min-height: 64px; outline: 0; transition: border-color .15s, box-shadow .15s; }
+.imp__paste:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--sel-border, transparent); }
+.imp__paste::placeholder { color: var(--text-2); opacity: .7; }
+.imp__err { margin-top: 10px; padding: 9px 12px; border-radius: var(--r); border-left: 3px solid var(--danger, #b3261e); background: color-mix(in srgb, var(--danger, #b3261e) 10%, var(--surface)); color: var(--text); font-size: 12px; line-height: 1.5; }
+.imp__err code { font-size: 11px; color: var(--text-2); }
+.imp__bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 16px 0 8px; }
+.imp__count { font-size: 12.5px; font-weight: 500; color: var(--text); min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.imp__btns { display: flex; gap: 6px; flex: none; }
+.imp__tablewrap { max-height: 240px; overflow: auto; border: 1px solid var(--border-2); border-radius: var(--r); background: var(--surface); }
+.imp__tbl { border-collapse: separate; border-spacing: 0; }
+.imp__tbl th { position: sticky; top: 0; z-index: 1; background: var(--app-bg); border-bottom: 1px solid var(--border-2); font-size: 10.5px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; padding: 8px 10px; }
+.imp__tbl td { padding: 7px 10px; vertical-align: middle; }
+.imp__tbl tbody tr:last-child td { border-bottom: 0; }
+.imp__tbl tbody tr:not(.imp__empty) { cursor: pointer; }
+.imp__tbl tbody tr:not(.imp__empty):hover td { background: var(--hover); }
+.imp__tbl tbody tr.is-off td:not(.imp__chk) { opacity: .55; }
+.imp__tbl .imp__chk { width: 38px; padding-left: 12px; padding-right: 0; text-align: center; }
+.imp__tbl code { font-size: 11.5px; color: var(--text); }
+.imp__clip { max-width: 170px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.imp__title { max-width: 250px; }
+.imp__type, .imp__year { color: var(--text-2); white-space: nowrap; }
+.imp__tag { display: inline-block; max-width: 170px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; vertical-align: middle; padding: 1px 9px; border-radius: 999px; font-size: 11px; font-weight: 600; }
+.imp__tag--new { background: color-mix(in srgb, #2f8f5b 16%, var(--surface)); color: color-mix(in srgb, #2f8f5b 75%, var(--text)); }
+.imp__tag--dup { background: color-mix(in srgb, #c27a1a 18%, var(--surface)); color: color-mix(in srgb, #c27a1a 70%, var(--text)); }
+.imp__tbl .imp__empty td { padding: 34px 16px; text-align: center; color: var(--text-2); font-size: 12.5px; border-bottom: 0; }
+.imp__note { margin-top: 10px; font-size: 11.5px; color: var(--text-2); }
+
+/* ---------- icon + text buttons: optical vertical centring (icons sat ~1px below the text's x-height) ---------- */
+.btn .ic, .sbtn .ic, .wc__btn .ic, .pd__badge .ic, .rbtn--sm .ic { position: relative; top: -1px; }
+.iconbtn .ic, .btn--icon .ic { top: 0; }
+@media (max-width: 1020px) { .sbtn .ic { top: 0; } }   /* label hidden → icon-only, keep it centred */
+
+/* shared search fields: one box model, no native search chrome */
+input[type="search"] { -webkit-appearance: none; appearance: none; box-sizing: border-box; }
+input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; appearance: none; }
+input[type="search"]:focus { outline: 0; border-color: var(--accent); box-shadow: var(--focus-shadow); }

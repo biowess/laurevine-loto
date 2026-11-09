@@ -1,0 +1,7 @@
+.lv-stats{width:100%;border-collapse:collapse;font-size:13px}
+.lv-stats th,.lv-stats td{padding:6px 8px;border-bottom:1px solid var(--border);text-align:right;font-variant-numeric:tabular-nums}
+.lv-stats th:first-child{text-align:left;font-weight:400;color:var(--text-2)}
+.lv-stats thead th{font-weight:500;color:var(--text)}
+.lv-stats-note{margin:10px 0 0;font-size:11.5px;color:var(--text-2)}
+.md-status .lv-stat{cursor:pointer;border-radius:var(--r);padding:2px 4px;margin:0 -4px}
+.md-status .lv-stat:hover,.md-status .lv-stat:focus-visible{background:var(--hover,rgba(128,128,128,.15))}

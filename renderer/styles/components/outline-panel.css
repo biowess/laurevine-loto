@@ -1,0 +1,16 @@
+.md-sb:has(>.ol){display:flex;flex-direction:column;overflow:hidden;padding:0}
+.ol{flex:1;min-height:0;display:flex;flex-direction:column}
+.ol__note{padding:12px;color:var(--text-2);font-size:12.5px}
+.ol__sc{position:relative;flex:1;min-height:0;overflow:auto;outline:none}
+.ol__sc:focus-visible{box-shadow:inset 0 0 0 1px var(--accent)}
+.ol__sp{position:relative;min-width:100%}
+.ol__row{position:absolute;left:0;right:0;height:26px;box-sizing:border-box;display:flex;align-items:center;gap:2px;padding-right:8px;cursor:pointer;white-space:nowrap;font-size:13px;border-left:2px solid transparent}
+.ol__row:hover{background:var(--hover)}
+.ol__row.is-on{background:var(--sel-bg);border-left-color:var(--accent);color:var(--accent);font-weight:600}
+.ol__row.is-cur{outline:1px dotted var(--accent);outline-offset:-1px}
+.ol__tw{flex:none;width:16px;height:16px;display:inline-flex;align-items:center;justify-content:center;color:var(--text-2);transition:transform .12s}
+.ol__tw svg{width:14px;height:14px}
+.ol__row:not(.has-kids) .ol__tw{visibility:hidden}
+.ol__row.is-open .ol__tw{transform:rotate(90deg)}
+.ol__t{overflow:hidden;text-overflow:ellipsis}
+.ol__h1{font-weight:600}

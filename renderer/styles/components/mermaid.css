@@ -1,0 +1,6 @@
+#prev .lt-mermaid{margin:.8em 0;border:1px solid var(--pv-rule,var(--border));border-radius:var(--r);background:var(--pv-code-bg,var(--hover))}
+#prev .lt-mm-scroll{overflow:auto;max-height:80vh;padding:.6em;text-align:center}
+#prev .lt-mm-scroll svg{max-width:100%;height:auto}
+#prev .lt-mm-src{margin:0;padding:.6em .8em;overflow:auto;max-height:40vh;font-size:.85em;color:var(--text-2)}
+#prev .lt-mm-err{padding:.5em .8em;border-bottom:1px solid var(--pv-rule,var(--border));color:#d64545;font-size:.85em}
+#prev .lt-mm-err pre{margin:.3em 0 0;white-space:pre-wrap;overflow:auto;max-height:12em;font-size:.95em}

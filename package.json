@@ -1,0 +1,108 @@
+{
+  "name": "laurevine-loto",
+  "productName": "Laurevine Loto",
+  "version": "1.0.0",
+  "description": "A local-first Markdown writing and publishing studio with a ribbon-based interface, rich document tools, and versatile export options.",
+  "author": "Biowess",
+  "license": "Apache-2.0",
+  "private": true,
+  "type": "module",
+  "main": "main/main.js",
+  "build": {
+    "appId": "com.biowess.laurevine-loto",
+    "productName": "Laurevine Loto",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main/**/*",
+      "renderer/**/*",
+      "shared/**/*",
+      "templates/**/*",
+      "assets/icons/icon.png",
+      "package.json",
+      "THIRD_PARTY_NOTICES.md",
+      "LICENSE.txt",
+      "NOTICE",
+      "TRADEMARK.md"
+    ],
+    "fileAssociations": [
+      {
+        "ext": "md",
+        "name": "Markdown Document",
+        "role": "Editor"
+      },
+      {
+        "ext": "markdown",
+        "name": "Markdown Document",
+        "role": "Editor"
+      }
+    ],
+    "asar": true,
+    "asarUnpack": [
+      "resources/**",
+      "templates/**"
+    ],
+    "publish": null,
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "icon": "assets/icons/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "mac": {
+      "target": [
+        "dmg"
+      ],
+      "icon": "assets/icons/icon.icns",
+      "category": "public.app-category.productivity"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "icon": "assets/icons",
+      "category": "Office",
+      "desktop": {
+        "StartupWMClass": "laurevine-loto"
+      }
+    }
+  },
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder",
+    "pack": "electron-builder --dir",
+    "check": "node tools/check.mjs",
+    "vendor": "node tools/vendor.mjs",
+    "perf": "node tools/perf.mjs",
+    "test": "node --test"
+  },
+  "devDependencies": {
+    "electron-builder": "^24.13.3",
+    "@codemirror/commands": "^6.8.0",
+    "@codemirror/lang-markdown": "^6.3.0",
+    "@codemirror/language": "^6.11.0",
+    "@codemirror/language-data": "^6.5.0",
+    "@codemirror/search": "^6.5.0",
+    "@codemirror/state": "^6.5.0",
+    "@codemirror/view": "^6.36.0",
+    "@lezer/highlight": "^1.2.0",
+    "dompurify": "^3.2.0",
+    "electron": "^45.2.2",
+    "esbuild": "^0.25.0",
+    "highlight.js": "^11.11.0",
+    "katex": "^0.16.0",
+    "markdown-it": "^14.1.0",
+    "mermaid": "^11.4.0",
+    "pagedjs": "^0.4.3",
+    "pdf-lib": "^1.17.1",
+    "turndown": "^7.2.0",
+    "turndown-plugin-gfm": "^1.0.2"
+  }
+}

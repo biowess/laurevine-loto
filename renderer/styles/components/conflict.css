@@ -1,0 +1,6 @@
+.lv-conflict { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; padding: 6px 12px; border-bottom: 1px solid var(--border, #ccc); background: color-mix(in srgb, var(--warning, #b26a00) 14%, var(--surface, var(--bg, #fff))); color: var(--fg, inherit); font-size: 13px; }
+.lv-conflict[hidden] { display: none; }
+.lv-conflict__msg { flex: 1 1 200px; font-weight: 600; }
+.lv-conflict__btn { padding: 3px 10px; border: 1px solid var(--border, currentColor); border-radius: var(--r); background: transparent; color: inherit; font: inherit; cursor: pointer; }
+.lv-conflict__btn:hover { background: color-mix(in srgb, currentColor 10%, transparent); }
+.lv-conflict__more { opacity: 0.75; }

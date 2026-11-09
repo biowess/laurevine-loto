@@ -1,0 +1,27 @@
+/* Open ▸ Recent Projects */
+.bs-rec-list { margin-top: 22px; }
+.bs-rec-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+.bs-rec { display: flex; align-items: stretch; gap: 4px; border: 1px solid var(--border); border-radius: var(--r); background: var(--surface); margin-bottom: 6px; }
+.bs-rec:hover { background: var(--sel-bg); border-color: var(--sel-border); }
+.bs-rec__open { flex: 1; min-width: 0; display: flex; align-items: flex-start; gap: 12px; text-align: left; padding: 10px 14px; }
+.bs-rec__open .ic { width: 20px; height: 20px; color: var(--accent); margin-top: 1px; }
+.bs-rec__open b { display: block; font-weight: 500; font-size: 14px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bs-rec__open small { display: block; color: var(--text-2); margin-top: 2px; font-size: 12px; }
+.bs-rec__rm { padding: 0 12px; color: var(--text-2); }
+.bs-rec__rm:hover { color: var(--accent); }
+.bs-rec.is-missing .bs-rec__open { opacity: .6; }
+.bs-rec.is-missing small { color: var(--accent); }
+
+.pm > .field { margin-top: 0 !important; } .pm { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 16px; max-width: 640px; } .pm .field small { font-size: 11.5px; } .pm__foot { display: flex; gap: 8px; margin-top: 16px; } .pm input:disabled { opacity: .55; }
+@media (max-width: 640px) { .pm { grid-template-columns: 1fr; } #compileLabel, .pane-head .muted { display: none; } }
+/* ---------- update-available dialog (js/updates.js) ---------- */
+.upd__lead { margin: 0 0 10px; line-height: 1.5; }
+.upd__notes { max-height: 240px; overflow: auto; padding: 8px 12px; border: 1px solid var(--border); border-radius: var(--r); background: var(--app-bg); font-size: 12.5px; line-height: 1.5; scrollbar-width: thin; }
+.upd__notes > :first-child { margin-top: 0; } .upd__notes > :last-child { margin-bottom: 0; }
+.upd__notes p, .upd__notes ul, .upd__notes ol, .upd__notes blockquote, .upd__notes pre { margin: 6px 0; }
+.upd__notes h4 { margin: 10px 0 4px; font-size: 12.5px; font-weight: 600; color: var(--accent); }
+.upd__notes ul, .upd__notes ol { padding-left: 20px; } .upd__notes li { margin: 2px 0; }
+.upd__notes blockquote { padding-left: 10px; border-left: 3px solid var(--border-2); color: var(--text-2); }
+.upd__notes code { padding: 0 4px; border-radius: var(--r); background: var(--hover); font-family: var(--mono); font-size: 11.5px; }
+.upd__notes pre { padding: 8px 10px; overflow: auto; border-radius: var(--r); background: var(--hover); } .upd__notes pre code { padding: 0; background: none; }
+.upd__notes hr { border: 0; border-top: 1px solid var(--border); margin: 10px 0; }

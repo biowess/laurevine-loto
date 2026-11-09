@@ -1,0 +1,28 @@
+/* editor groups: the tab strip moved into .md-group, so the shell grid loses its 32px tabs row */
+.md{grid-template-rows:var(--titlebar-h) var(--tabs-h) var(--ribbon-h) minmax(0,1fr) var(--status-h)}
+.md-groups{flex:1;min-width:0;min-height:0;display:flex}
+.md-groups[data-orient=vertical]{flex-direction:column}
+.md-group{flex:1 1 0;min-width:0;min-height:0;display:flex;flex-direction:column;position:relative}
+.md-group>.md-tabs{flex:none;height:32px}
+.md-group>.md-editor{min-height:0}
+.md-groups[data-count="2"][data-orient=horizontal]>.md-group+.md-group{border-left:1px solid var(--border-2)}
+.md-groups[data-count="2"][data-orient=vertical]>.md-group+.md-group{border-top:1px solid var(--border-2)}
+.md-groups[data-count="2"]>.md-group:not(.is-active)>.md-tabs .md-tab.is-on{opacity:.7}
+.md-groups[data-count="2"]>.md-group.is-active>.md-tabs .md-tab.is-on{color:var(--accent)}
+.md-groups[data-count="2"]>.md-group{flex:var(--gr,.5) 1 0}
+.md-groups[data-count="2"]>.md-group:last-child{flex-grow:var(--gr2,.5)}
+.md-gdiv{flex:none;position:relative;background:var(--border-2);z-index:2;touch-action:none}
+.md-groups[data-orient=horizontal]>.md-gdiv{width:5px;cursor:col-resize}
+.md-groups[data-orient=vertical]>.md-gdiv{height:5px;cursor:row-resize}
+.md-gdiv:hover,.md-gdiv:focus-visible,.md-gdiv.is-drag{background:var(--accent);outline:0}
+.md-group.is-drop{outline:2px dashed var(--accent);outline-offset:-2px}
+.md-gctl{flex:none}
+.md-seg .md-gctl:first-of-type{margin-left:auto}
+/* per-group modes: second group's panes use the same rules as the first, keyed on .md-editor */
+.md-group .md-editor:not([data-mode=split],[data-mode=previewLeft],[data-mode=previewRight]) .md-div{display:none}
+/* sidebars never push the window wider: the editor area shrinks instead */
+.md{grid-template-columns:minmax(0,1fr)}
+.md-work{min-width:0}
+.md-groups{overflow:hidden}
+.md-group>.md-editor{min-width:0}
+.md-side{max-width:calc(50% - 120px)}

@@ -1,0 +1,39 @@
+/* Reading View + Distraction-Free View */
+.rd-bar,.md-edge{display:none}
+.md[data-view]{grid-template-rows:var(--titlebar-h) minmax(0,1fr)}
+.md[data-view] .md-work{grid-row:2}
+.md[data-view] .md-grip{display:none}
+.md[data-view] .md-status,.md[data-view] .tabrow,.md[data-view] .ribbon,.md[data-view] .md-tabs,.md[data-view] .md-side{
+  display:flex;position:fixed;z-index:30;opacity:0;pointer-events:none;transition:opacity .15s ease,transform .15s ease;background:var(--app-bg)}
+.md[data-view] .tabrow{display:block}
+.md[data-view] .ribbon{display:block}
+.md[data-view] .tabrow,.md[data-view] .ribbon,.md[data-view] .md-tabs{left:0;right:0;transform:translateY(-8px)}
+.md[data-view] .tabrow{top:var(--titlebar-h)}
+.md[data-view] .ribbon{top:calc(var(--titlebar-h) + var(--tabs-h))}
+.md[data-view] .md-tabs{top:calc(var(--titlebar-h) + var(--tabs-h) + var(--ribbon-h));height:32px}
+.md[data-view] .md-status{left:0;right:0;bottom:0;height:var(--status-h,26px);transform:translateY(8px)}
+.md[data-view] .md-side{top:var(--titlebar-h);bottom:0;flex-direction:column;overflow:auto;box-shadow:0 0 24px rgb(0 0 0/.18)}
+.md[data-view] .md-left{left:0;width:var(--lw);transform:translateX(-12px)}
+.md[data-view] .md-right{right:0;width:var(--rw);transform:translateX(12px)}
+.md[data-view] .md-edge{display:block;position:fixed;z-index:31;background:transparent}
+.md-edge--t{top:var(--titlebar-h);left:0;right:0;height:6px}
+.md-edge--b{bottom:0;left:0;right:0;height:6px}
+.md-edge--l{top:var(--titlebar-h);bottom:0;left:0;width:6px}
+.md-edge--r{top:var(--titlebar-h);bottom:0;right:0;width:6px}
+.md[data-view=free]:is(:has(.md-edge--t:hover),:has(.tabrow:hover),:has(.ribbon:hover),:has(.md-tabs:hover),:has(.tabrow:focus-within),:has(.ribbon:focus-within)) :is(.tabrow,.ribbon,.md-tabs),
+.md[data-view=free]:is(:has(.md-edge--b:hover),:has(.md-status:hover)) .md-status,
+.md[data-view=free][data-left=on]:is(:has(.md-edge--l:hover),:has(.md-left:hover),:has(.md-left:focus-within)) .md-left,
+.md[data-view=free][data-right=on]:is(:has(.md-edge--r:hover),:has(.md-right:hover),:has(.md-right:focus-within)) .md-right{opacity:1;pointer-events:auto;transform:none}
+.md[data-view=free][data-status=off] .md-status{display:none}
+.md[data-view=reading] .md-seg{display:none}
+.md[data-view=reading] .md-edge{display:none}
+.md[data-view=reading] .md-editor{display:flex;flex-direction:column}
+.md[data-view=reading] .rd-bar{display:flex;align-items:center;gap:12px;flex:none;height:28px;padding:0 14px;font-size:12px;color:var(--muted,inherit);border-bottom:1px solid var(--border);background:var(--app-bg)}
+.rd-bar__t{font-weight:600}
+.rd-bar__k{margin-inline-start:auto;opacity:.7}
+.rd-bar__x{font:inherit;padding:2px 10px;border:1px solid var(--border);border-radius:var(--r);background:transparent;color:inherit;cursor:pointer}
+.rd-bar__x:hover,.rd-bar__x:focus-visible{background:var(--accent-l)}
+.md[data-view=reading] .md-panes{flex:1 1 0}
+.md[data-view=reading] .md-prev{padding-inline:max(clamp(12px,4vw,24px),calc((100% - 72ch) / 2));line-height:1.75}
+@media (prefers-reduced-motion:reduce){.md[data-view] :is(.md-status,.tabrow,.ribbon,.md-tabs,.md-side){transition:none}}
+.md[data-view=reading] .md-prev:focus,.md[data-view=reading] .md-prev:focus-visible{outline:0!important;box-shadow:none}

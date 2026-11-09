@@ -1,0 +1,18 @@
+# Build output
+/dist/
+
+# Node Modules
+/node_modules/
+
+# Packaging
+Dockerfile.appimage
+lotofinal.zip
+
+# Local development
+.ctx-stamp
+z.py
+
+# Generated documentation
+/readme.md
+/CHANGELOG.md
+/CODEMAP.md

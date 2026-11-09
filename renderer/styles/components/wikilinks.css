@@ -1,0 +1,11 @@
+/* Wiki-links and embed placeholders in the preview */
+#prev .lt-wiki{color:var(--accent);border-bottom:1px solid color-mix(in srgb,currentColor 45%,transparent);cursor:default}
+#prev .lt-wiki-missing{--w:#d64545;color:var(--w);border-bottom:1px dashed var(--w)}
+#prev .lt-wiki-ambiguous{--w:#d98a00;color:var(--w);border-bottom:1px dotted var(--w)}
+#prev .lt-wiki-unknown{color:var(--muted,#7a7a7a);border-bottom:1px dotted currentColor}
+#prev .lt-embed{--w:var(--accent);display:inline-block;margin:.15em 0;padding:.1em .55em;border:1px dashed var(--w);border-radius:var(--r);font-size:.92em;background:color-mix(in srgb,var(--w) 8%,transparent)}
+#prev .lt-embed-missing{--w:#d64545}
+#prev .lt-embed-ambiguous{--w:#d98a00}
+#prev .lt-embed-unknown{--w:#7a7a7a}
+#prev .lt-embed-flag{margin-right:.35em;font-size:.78em;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--w)}
+#prev .lt-embed i{margin-left:.4em;font-size:.82em;opacity:.7}

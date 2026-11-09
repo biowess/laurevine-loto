@@ -1,0 +1,11 @@
+#prev[data-pv-theme=manuscript]{--pv-tf:"Lora",Georgia,var(--pv-sfb);--pv-hf:"Lora",var(--pv-sfb);--pv-hw:600;--pv-scale:1.02;--pv-ls:0;--pv-h1:2.2em;--pv-h2:1.4em;--pv-h3:1.15em;--pv-r:3px}
+#prev[data-pv-theme=manuscript]>p{margin:0;text-align:justify;hyphens:auto}
+#prev[data-pv-theme=manuscript]>p+p{text-indent:1.6em}
+#prev[data-pv-theme=manuscript]>p+ul,#prev[data-pv-theme=manuscript]>p+ol{margin-top:1em}
+#prev[data-pv-theme=manuscript] ul,#prev[data-pv-theme=manuscript] ol{margin-bottom:1em}
+#prev[data-pv-theme=manuscript]>p:first-child{margin-top:0}
+#prev[data-pv-theme=manuscript] h1{text-align:center}
+#prev[data-pv-theme=manuscript] h2{font-style:italic;font-weight:500}
+#prev[data-pv-theme=manuscript] blockquote{margin:1.2em 2em;border-left:0;background:none;font-style:italic}
+#prev[data-pv-theme=manuscript] hr{height:auto;background:none;text-align:center;overflow:visible}
+#prev[data-pv-theme=manuscript] hr::after{content:"* * *";letter-spacing:.6em;color:var(--text-2)}

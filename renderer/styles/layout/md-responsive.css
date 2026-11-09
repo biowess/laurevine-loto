@@ -1,0 +1,17 @@
+@media (max-width:1100px){.md{--lw:200px;--rw:210px}.md-stset{width:340px}.md-tpl{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:900px){.md-cmd{width:180px}.md-stnav{width:48px}.md-stnav button span{display:none}.md-bnav{width:56px}.md-bnav span{display:none}.md-bmain{padding:20px}}
+@media (max-width:720px){.md-brand{display:none}.md-stbody{flex-wrap:wrap;overflow:auto}.md-stset{width:100%}}
+
+/* sidebar panel header (Plum .slidepane__head language) */
+.md-sh{display:flex;align-items:center;gap:1px;height:34px;padding:0 6px 0 12px;border-bottom:1px solid var(--border);font-weight:600;font-size:12.5px;flex:none}.md-sh .sp{flex:1}
+.md-sh .tbtn{width:24px;height:24px}.md-sh .ic{width:14px;height:14px}
+.md-sbh{padding:8px 10px 2px}.md-sbh+.md-sbh{padding-top:4px}.md-lbl{padding:10px 12px 4px}.md-row{padding-left:12px}.md-kv{padding:3px 12px}
+.md-row .ic{flex:none}.md-row{transition:background-color var(--t-fast)}.md-hit{transition:background-color var(--t-fast)}
+.caret{display:inline-block;width:1.5px;height:1.15em;margin-left:1px;background:var(--accent);vertical-align:text-bottom;animation:mdBlink 1.1s steps(1) infinite}
+/* motion: same restraint as Plum: 120 ms state transitions, a 150 ms fade for full-screen layers, a blinking caret. */
+@keyframes mdFade{from{opacity:0}to{opacity:1}}
+@keyframes mdBlink{50%{opacity:0}}
+.md-backstage:not([hidden]),.md-studio:not([hidden]){animation:mdFade 150ms ease}
+.md-card,.md-pal{transition:border-color var(--t-fast),box-shadow var(--t-fast)}
+.md-bnav button,.md-stnav button{transition:background-color var(--t-fast),color var(--t-fast)}
+@media (prefers-reduced-motion:reduce){.md *,.md *::before,.md *::after{animation:none!important;transition:none!important}}

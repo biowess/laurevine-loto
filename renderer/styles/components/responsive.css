@@ -1,0 +1,70 @@
+/* Responsive layout, 960x600 up to 4K and UI zoom 80-200%. Viewport media queries follow zoom because zoom changes the CSS viewport. */
+
+/* ribbon overflow */
+.ribbon-more { flex: none; align-self: stretch; margin: 6px 0 6px 2px; height: auto; }
+
+/* sidebars float over the editor below 1000px instead of squeezing it */
+.md[data-compact=on]:not([data-view]) .md-work { position: relative; }
+.md[data-compact=on]:not([data-view]) .md-side { position: absolute; top: 0; bottom: 0; z-index: 20; max-width: calc(100% - 48px); box-shadow: var(--shadow-pop); }
+.md[data-compact=on]:not([data-view]) .md-left { left: 0; }
+.md[data-compact=on]:not([data-view]) .md-right { right: 0; }
+.md[data-compact=on]:not([data-view])[data-left=on][data-right=on] .md-side { max-width: calc(50% - 8px); }
+.md[data-compact=on]:not([data-view])[data-left=off] .md-left, .md[data-compact=on]:not([data-view])[data-right=off] .md-right { box-shadow: none; }
+.md[data-compact=on]:not([data-view]) .md-grip { display: none; }
+
+/* mode bar and status bar never clip controls */
+.md-seg { flex-wrap: wrap; height: auto; min-height: 34px; padding-block: 2px; row-gap: 2px; }
+.md-status > span { flex: none; }
+.md-status > .lv-sp-path { flex: 0 1 auto; min-width: 48px; max-width: 32ch; overflow: hidden; text-overflow: ellipsis; }
+
+/* long names and paths truncate; the full text is the tooltip (see ui/kit/truncation.js) */
+.md-row > span, .md-row > b { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.md-hit { overflow-wrap: anywhere; }
+.lv-hmain b { flex: 0 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.lv-hmain small, .lv-hmain em { flex: 1 1 0; min-width: 0; }
+.lv-tcard b, .lv-gn { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.menu__label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.menu { max-width: min(420px, calc(100vw - 16px)); }
+.md-bmain h2, .md-studio h2, .md-sthead .sub { overflow-wrap: anywhere; }
+
+/* dialogs scroll inside the viewport and keep their buttons reachable */
+.dlg__title { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.dlg__text { overflow-wrap: anywhere; }
+.dlg__foot { flex-wrap: wrap; }
+.dlg__foot .btn { max-width: 100%; }
+.dlg__foot .btn, .md-export { white-space: nowrap; }
+
+@media (max-width: 1100px) {
+  .md-status > .lv-sp-meta { display: none; }
+}
+
+@media (max-width: 900px) {
+  .md-sthead { flex-wrap: wrap; height: auto; min-height: 48px; padding: 6px 12px; row-gap: 4px; }
+  .md-stnav button { justify-content: center; padding: 0; }
+  .md-bnav button { justify-content: center; padding: 0; }
+  .md-status > .lv-sp-path { display: none; }
+}
+
+@media (max-width: 760px) {
+  .md-bmain { padding: 16px; }
+  .lv-pf { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .lv-pf__nav { flex-direction: row; flex-wrap: wrap; }
+  .lv-pf__row { grid-template-columns: minmax(0, 1fr); }
+  .lv-pf__path, .lv-int__path .input { min-width: 0; width: 100%; }
+  .lv-tbar { flex-wrap: wrap; }
+  .lv-hacts { opacity: 1; }
+}
+
+@media (max-width: 720px) {
+  .md-stbody { flex-direction: column; flex-wrap: nowrap; overflow: auto; }
+  .md-stnav { width: 100%; flex: none; flex-direction: row; overflow-x: auto; padding: 4px 6px; border-right: 0; border-bottom: 1px solid var(--border); }
+  .md-stnav button { flex: none; width: 36px; }
+  .md-stset { width: 100%; flex: none; overflow: visible; border-right: 0; border-bottom: 1px solid var(--border); }
+  .md-pvwrap { flex: none; height: min(560px, 85vh); }
+  .md-stfoot { padding-inline: 10px; }
+}
+
+@media (min-width: 2200px) {
+  .md-bmain { padding: 44px max(44px, calc((100% - 1200px) / 2)); }
+  .md-stset { width: min(520px, 24vw); }
+}

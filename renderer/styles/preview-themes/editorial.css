@@ -1,0 +1,8 @@
+#prev[data-pv-theme=editorial]{--pv-tf:"EB Garamond",var(--pv-sfb);--pv-hf:"Cormorant Garamond","EB Garamond",var(--pv-sfb);--pv-hw:600;--pv-scale:1.12;--pv-ls:-.005em;--pv-h1:2.7em;--pv-h2:1.9em;--pv-h3:1.3em;--pv-r:3px}
+#prev[data-pv-theme=editorial] h1{font-weight:500;margin-bottom:.5em}
+#prev[data-pv-theme=editorial] h2{padding-bottom:.2em;border-bottom:1px solid var(--pv-rule)}
+#prev[data-pv-theme=editorial] h3{font-style:italic;color:var(--pv-link)}
+#prev[data-pv-theme=editorial] blockquote{position:relative;padding:.3em 1.4em .3em 2.2em;border-left:0;background:none;font-style:italic;font-size:1.05em}
+#prev[data-pv-theme=editorial] blockquote::before{content:"\201C";position:absolute;left:.2em;top:-.12em;font:600 3em/1 var(--pv-hf);color:var(--pv-quote);opacity:.75}
+#prev[data-pv-theme=editorial] hr{height:auto;background:none;text-align:center;overflow:visible}
+#prev[data-pv-theme=editorial] hr::after{content:"* * *";letter-spacing:.6em;color:var(--text-2)}

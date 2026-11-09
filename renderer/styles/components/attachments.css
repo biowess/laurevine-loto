@@ -1,0 +1,17 @@
+.att{display:flex;flex-direction:column;gap:4px;padding:0 10px 10px;font-size:12.5px}
+.att__b{display:flex;flex-direction:column;gap:4px}
+.att__m{color:var(--text-2);padding:6px 0}
+.att__r{display:flex;align-items:center;gap:8px;padding:4px;border-radius:var(--r);flex-wrap:wrap}
+.att__r:hover{background:var(--hover)}
+.att__th{width:40px;height:40px;flex:none;object-fit:cover;border-radius:var(--r);background:var(--hover)}
+.att__ic{display:flex;align-items:center;justify-content:center;color:var(--text-2)}
+.att__bad{color:var(--danger,#b3261e);outline:1px dashed currentColor}
+.att__i{flex:1;min-width:80px;display:flex;flex-direction:column}
+.att__n{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.att__i small{color:var(--text-2);font-size:11px}
+.att__f{font-size:10.5px;padding:1px 6px;border-radius:var(--r);border:1px solid var(--accent);color:var(--accent)}
+.att__f--bad{color:var(--danger,#b3261e);border-color:var(--danger,#b3261e)}
+.att__a{display:flex;gap:2px;margin-left:auto}
+.att__a .tbtn:disabled{opacity:.4;cursor:not-allowed}
+.att-dlg .att{padding:0;max-height:60vh;overflow:auto}
+.att-dlg .att__th{width:56px;height:56px}

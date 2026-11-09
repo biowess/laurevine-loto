@@ -1,0 +1,52 @@
+.lv-pf{display:grid;grid-template-columns:minmax(200px,max-content) minmax(0,1fr);gap:32px;max-width:900px;margin-top:6px}
+.lv-pf__search{max-width:none;margin:14px 0 12px}.md-bmain>div:has(>.lv-pf__search){max-width:900px}
+.lv-pf__nav{display:flex;flex-direction:column;gap:2px;align-self:start;position:sticky;top:0;padding-right:16px;border-right:1px solid var(--border)}
+.lv-pf__nav button{white-space:nowrap;display:flex;align-items:center;gap:10px;height:30px;padding:0 10px;border:0;border-radius:var(--r);background:none;color:var(--text);font:inherit;font-size:13px;text-align:left;cursor:pointer}
+.lv-pf__nav button:hover:not(.is-on){background:var(--hover)}.lv-pf__nav .ic{width:15px;height:15px;flex:none;color:var(--text-2)}
+.lv-pf__nav button.is-on{background:color-mix(in srgb,var(--accent-l) 14%,transparent);font-weight:500}.lv-pf__nav button.is-on .ic{color:var(--accent)}.lv-pf__nav .is-planned{color:var(--text-2)}
+.lv-pf__nav em{margin-left:auto;font-style:normal;font-size:10px;color:var(--text-2)}
+.lv-pf__body h4{display:flex;align-items:center;gap:10px;min-height:28px;margin:28px 0 2px;padding-bottom:6px;border-bottom:1px solid var(--border);font-size:13px;font-weight:600}.lv-pf__body section:first-child h4,.lv-pf__body>h4+section h4{margin-top:0}
+.lv-pf__body>h4{margin:0 0 8px;border:0;font-size:16px}
+.lv-pf__sreset{display:inline-flex;flex-direction:row;align-items:center;white-space:nowrap;width:auto;height:24px;margin-left:auto;padding:0 8px;gap:6px;font-size:12px;font-weight:400;color:var(--text-2)}.lv-pf__sreset:hover:not(:disabled){color:var(--text)}
+.lv-pf__row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 24px;align-items:center;min-height:48px;padding:10px 4px;border-bottom:1px solid var(--border)}
+.lv-pf__row.is-hit{background:color-mix(in srgb,var(--accent-l) 18%,transparent)}
+.lv-pf__txt label{font-size:13px;font-weight:500}.lv-pf__txt small{display:block;color:var(--text-2);font-size:12px}
+.lv-pf__ctl{display:flex;align-items:center;justify-content:flex-end;gap:8px}.lv-pf__c{display:inline-flex;align-items:center;gap:8px}
+.lv-pf__num{width:90px}.lv-pf__path{min-width:220px;font-family:var(--mono,monospace)}
+.lv-pf__mod{display:none;width:6px;height:6px;margin-left:6px;border-radius:50%;background:var(--accent-l);vertical-align:middle}.lv-pf__row.is-mod .lv-pf__mod{display:inline-block}
+.lv-pf__rs{margin-left:8px;padding:0 6px;border:1px solid var(--border);border-radius:var(--r);font-style:normal;font-size:10px;font-weight:400;color:var(--text-2)}
+.lv-pf__err{grid-column:1/-1;color:var(--danger,#b3261e);font-size:12px}.lv-pf__err:empty{display:none}
+.lv-pf [aria-invalid]{border-color:var(--danger,#b3261e)}
+.lv-pf__hit{display:block;width:100%;padding:8px 6px;border:0;border-bottom:1px solid var(--border);background:none;color:var(--text);font:inherit;text-align:left;cursor:pointer}.lv-pf__hit small{display:block;color:var(--text-2);font-size:12px}
+.lv-int__badge{display:inline-block;padding:1px 8px;border:1px solid var(--border);border-radius:var(--r);font-size:12px;font-weight:600}
+.lv-int__badge[data-state=ready]{color:var(--success,#1b7f3b);border-color:currentColor}
+.lv-int__badge[data-state=too-old],.lv-int__badge[data-state=busy]{color:var(--warning,#9a6700);border-color:currentColor}
+.lv-int__badge[data-state=broken],.lv-int__badge[data-state=invalid-path],.lv-int__badge[data-state=not-found]{color:var(--danger,#b3261e);border-color:currentColor}
+.lv-int__res[data-state=ok]{color:var(--success,#1b7f3b)}.lv-int__res[data-state=bad]{color:var(--danger,#b3261e)}
+.lv-int__res:empty{display:none}.lv-pf__row:has(>.lv-int__res:empty){display:none}
+.lv-int__guide{padding:10px 6px}.lv-int__guide p{margin:4px 0;color:var(--text-2);font-size:12.5px}.lv-int__guide code{user-select:all}
+
+/* Task 14: unified controls */
+.lv-pf .input,.lv-pf .btn{height:28px;font-size:12px;box-sizing:border-box}.lv-pf .btn{padding:0 12px}
+.lv-pf__ctl{--cw:220px}.lv-pf__ctl .tbtn{width:26px;height:26px;flex:none}
+.lv-pf__ctl .c-select,.lv-pf__ctl .input:not([type=color]),.lv-pf__ctl .lv-pf__path,.lv-pf__ctl .lv-pf__num{box-sizing:border-box;flex:none;width:var(--cw);min-width:0;max-width:100%}
+.lv-pf__c:has(>.lv-pf__range) .lv-pf__num{width:90px}
+.lv-pf__ctl .btn,.lv-pf__ctl .lv-int__badge{flex:none;white-space:nowrap}
+.lv-pf__ctl .lv-int__badge{min-width:52px;text-align:center}
+.lv-pf .c-select:focus-visible,.lv-pf .c-select.is-open{outline:0!important}
+.lv-pf__txt label{display:block}.lv-pf__txt small{margin-top:2px}
+.km__q,.km__bar .btn,.km .btn,.km__msg .btn{height:28px;box-sizing:border-box;font-size:12px}.km .btn,.km__msg .btn{min-width:64px;padding:0 10px}.km__q{padding:0 8px}
+input[type=checkbox].lv-pf__sw{-webkit-appearance:none;appearance:none;box-sizing:border-box;display:inline-block;position:relative;flex:none;width:36px;height:20px;margin:0;border:1px solid var(--border-2);border-radius:10px;background:var(--surface);box-shadow:none;cursor:pointer;transition:background-color .16s ease,border-color .16s ease}
+input[type=checkbox].lv-pf__sw::after,input[type=checkbox].lv-pf__sw:checked::after{content:"";position:absolute;top:3px;left:3px;width:12px;height:12px;border:0;border-radius:50%;background:var(--text-2);-webkit-mask:none;mask:none;box-shadow:none;transform:translateX(0);transition:transform .16s ease,background-color .16s ease}
+input[type=checkbox].lv-pf__sw:hover:not(:disabled){border-color:var(--text-2)}
+input[type=checkbox].lv-pf__sw:checked{background:var(--accent);border-color:var(--accent)}
+input[type=checkbox].lv-pf__sw:checked::after{background:var(--surface);transform:translateX(16px)}
+input[type=checkbox].lv-pf__sw:focus-visible{outline:2px solid var(--accent);outline-offset:2px;box-shadow:none}
+input[type=checkbox].lv-pf__sw:disabled{opacity:.45;cursor:default}
+@media (prefers-reduced-motion:reduce){input[type=checkbox].lv-pf__sw,input[type=checkbox].lv-pf__sw::after{transition:none}}
+@media (forced-colors:active){.lv-pf__sw{forced-color-adjust:none;border-color:CanvasText;background:Canvas}.lv-pf__sw::after{background:CanvasText}.lv-pf__sw:checked{background:Highlight}.lv-pf__sw:checked::after{background:HighlightText}}
+/* rows without a reset button keep the same right edge as rows that have one */
+.lv-pf__ctl:not(:has(.tbtn))::after{content:"";flex:none;width:26px}
+/* the section reset button must not change the heading's height */
+.lv-pf__body h4{position:relative}
+.lv-pf__body h4 .lv-pf__sreset{position:absolute;right:0;top:calc(50% - 3px);margin:0;transform:translateY(-50%)}

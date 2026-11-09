@@ -1,0 +1,5 @@
+.sc-pop { width: 312px; }
+.sc-body { max-height: 280px; }
+.sc-grid { display: grid; grid-template-columns: repeat(8, 1fr); gap: 2px; padding: 2px 0; }
+.sc-c { min-height: 28px; padding: 2px 0; font: inherit; text-align: center; color: var(--text); background: none; border: 0; border-radius: var(--r); cursor: pointer; }
+.sc-c:hover, .sc-c:focus-visible { background: var(--hover, rgba(127, 127, 127, .15)); outline: none; }

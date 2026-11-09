@@ -1,0 +1,15 @@
+.lp-tabs { display: flex; gap: 0; border-bottom: 1px solid var(--border); }
+.lp-tab { position: relative; height: 32px; padding: 0 12px; font: inherit; font-size: 12.5px; color: var(--text-2); background: transparent; border: 0; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; white-space: nowrap; transition: color var(--t-fast); }
+.lp-tab::after { content: ''; position: absolute; left: 8px; right: 8px; bottom: -1px; height: 2px; background: var(--accent); transform: scaleX(0); transition: transform var(--t-fast); border-radius: 1px; }
+.lp-tab:hover { color: var(--text); }
+.lp-tab[aria-selected="true"] { color: var(--accent); font-weight: 500; }
+.lp-tab[aria-selected="true"]::after { transform: scaleX(1); }
+.lp-panel { display: grid; gap: 10px; }
+.lp-panel[hidden] { display: none; }
+.lp-list { max-height: 160px; overflow: auto; display: grid; align-content: start; border: 1px solid color-mix(in srgb, currentColor 25%, transparent); border-radius: var(--r); }
+.lp-short { max-height: 96px; }
+.lp-heads { max-height: 140px; }
+.lp-item { text-align: left; padding: 4px 8px; font: inherit; font-size: 13px; color: inherit; background: transparent; border: 0; cursor: pointer; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lp-item:hover, .lp-item:focus-visible { background: color-mix(in srgb, currentColor 8%, transparent); }
+.lp-item[aria-selected="true"] { background: color-mix(in srgb, currentColor 16%, transparent); font-weight: 600; }
+.lp-none { padding: 6px 8px; font-size: 12px; opacity: .7; }

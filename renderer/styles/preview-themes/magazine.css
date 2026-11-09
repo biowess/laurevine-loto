@@ -1,0 +1,8 @@
+#prev[data-pv-theme=magazine]{--pv-tf:"Source Sans 3","Spline Sans",var(--pv-nfb);--pv-hf:"Playfair Display",var(--pv-sfb);--pv-nf:"Source Sans 3",var(--pv-nfb);--pv-hw:800;--pv-scale:1.1;--pv-ls:-.02em;--pv-h1:3em;--pv-h2:1.8em;--pv-h3:1.3em;--pv-r:2px}
+#prev[data-pv-theme=magazine] h1{font-weight:900;line-height:1.05}
+#prev[data-pv-theme=magazine] h1+p{margin-bottom:1.6em;font-size:1.18em;line-height:1.5;color:var(--text-2)}
+#prev[data-pv-theme=magazine] h2{font-style:italic;font-weight:700}
+#prev[data-pv-theme=magazine] h3{font:700 .9em var(--pv-nf);letter-spacing:.12em;text-transform:uppercase;color:var(--pv-link)}
+#prev[data-pv-theme=magazine] blockquote{margin:1.8em 0;padding:.8em 1em;border:0;border-top:2px solid var(--pv-quote);border-bottom:2px solid var(--pv-quote);border-radius:0;background:none;color:var(--text);text-align:center;font-family:var(--pv-hf);font-size:1.3em;font-style:italic;font-weight:600;line-height:1.35}
+#prev[data-pv-theme=magazine] a{text-decoration:none;background:linear-gradient(color-mix(in srgb,var(--accent) 22%,transparent),color-mix(in srgb,var(--accent) 22%,transparent)) 0 100%/100% .4em no-repeat}
+#prev[data-pv-theme=magazine] a:hover{background-size:100% 100%}

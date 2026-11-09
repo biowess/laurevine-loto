@@ -1,0 +1,165 @@
+import { CH } from '../../../shared/channels.js';
+import appInfo, { notices as appNotices } from './app-info.js';
+import * as settings from './settings.js';
+import * as win from './window.js';
+import * as assets from './assets.js';
+import * as clipboard from './clipboard.js';
+import * as doc from './doc.js';
+import * as docwatch from './docwatch.js';
+import * as recents from './recents.js';
+import * as privacy from './privacy.js';
+import * as templates from './templates.js';
+import * as palettes from './palettes.js';
+import * as presets from './presets.js';
+import * as workspace from './workspace.js';
+import * as fsh from './fs.js';
+import * as spell from './spell.js';
+import * as grammar from './grammar.js';
+import * as search from './search.js';
+import * as tx from './tx.js';
+import * as image from './image.js';
+import * as recovery from './recovery.js';
+import * as history from './history.js';
+import * as session from './session.js';
+import * as pdf from './pdf.js';
+import * as migration from './migration.js';
+import * as print from './print.js';
+import * as pandoc from './pandoc.js';
+import * as snippets from './snippets.js';
+
+// channel name -> handler(payload, event). Keys must exist in shared/channels.js.
+export const handlers = Object.freeze({
+  [CH.APP_INFO]: appInfo,
+  [CH.APP_NOTICES]: appNotices,
+  [CH.SETTINGS_GET_ALL]: settings.getAll,
+  [CH.SETTINGS_SET]: settings.set,
+  [CH.SETTINGS_RESET]: settings.reset,
+  [CH.WINDOW_SET_THEME]: win.setTheme,
+  [CH.WINDOW_TOGGLE_MAXIMIZE]: win.toggleMaximize,
+  [CH.WINDOW_MINIMIZE]: win.minimize,
+  [CH.WINDOW_REQUEST_CLOSE]: win.requestClose,
+  [CH.WINDOW_IS_MAXIMIZED]: win.isMaximized,
+  [CH.WINDOW_SET_FULL_SCREEN]: win.setFullScreen,
+  [CH.WINDOW_SET_ZOOM]: win.setZoom,
+  [CH.PRIVACY_CLEAR]: privacy.clear,
+  [CH.WINDOW_ARM_CLOSE_GUARD]: win.armCloseGuard,
+  [CH.WINDOW_CLOSE]: win.close,
+  [CH.ASSETS_AUTHORIZE_ROOT]: assets.authorizeRoot,
+  [CH.IMAGE_PICK]: image.pick,
+  [CH.IMAGE_PICK_DIR]: image.pickDir,
+  [CH.IMAGE_COPY]: image.copy,
+  [CH.IMAGE_SAVE]: image.save,
+  [CH.IMAGE_LIST]: image.list,
+  [CH.RECOVERY_LIST]: recovery.list,
+  [CH.RECOVERY_READ]: recovery.read,
+  [CH.RECOVERY_PUT]: recovery.put,
+  [CH.RECOVERY_DROP]: recovery.drop,
+  [CH.HISTORY_LIST]: history.list,
+  [CH.HISTORY_READ]: history.read,
+  [CH.HISTORY_RESTORE]: history.restore,
+  [CH.HISTORY_PIN]: history.pin,
+  [CH.HISTORY_DELETE]: history.del,
+  [CH.HISTORY_STATS]: history.stats,
+  [CH.HISTORY_FILES]: history.files,
+  [CH.HISTORY_SNAPSHOT]: history.snapshot,
+  [CH.DOC_WATCH]: docwatch.watch,
+  [CH.DOC_UNWATCH]: docwatch.unwatch,
+  [CH.SESSION_GET]: session.get,
+  [CH.SESSION_SET]: session.set,
+  [CH.CLIPBOARD_WRITE_TEXT]: clipboard.writeText,
+  [CH.CLIPBOARD_WRITE_RICH]: clipboard.writeRich,
+  [CH.CLIPBOARD_READ_TEXT]: clipboard.readText,
+  [CH.CLIPBOARD_READ_HTML]: clipboard.readHtml,
+  [CH.CLIPBOARD_READ_IMAGE]: clipboard.readImage,
+  [CH.DOC_OPEN]: doc.open,
+  [CH.DOC_OPEN_DIALOG]: doc.openDialog,
+  [CH.DOC_SAVE]: doc.save,
+  [CH.DOC_SAVE_AS]: doc.saveAs,
+  [CH.DOC_SAVE_COPY]: doc.saveCopy,
+  [CH.DOC_STAT]: doc.stat,
+  [CH.DOC_REVEAL]: doc.reveal,
+  [CH.DOC_OPEN_EXTERNAL]: doc.openExternal,
+  [CH.DOC_RENAME]: doc.rename,
+  [CH.RECENTS_LIST]: recents.list,
+  [CH.RECENTS_PIN]: recents.pin,
+  [CH.RECENTS_UNPIN]: recents.unpin,
+  [CH.RECENTS_REMOVE]: recents.remove,
+  [CH.RECENTS_CLEAR]: recents.clear,
+  [CH.TEMPLATES_LIST]: templates.list,
+  [CH.TEMPLATES_SAVE]: templates.save,
+  [CH.TEMPLATES_UPDATE]: templates.update,
+  [CH.TEMPLATES_DUPLICATE]: templates.duplicate,
+  [CH.TEMPLATES_DELETE]: templates.remove,
+  [CH.TEMPLATES_IMPORT]: templates.importFiles,
+  [CH.TEMPLATES_EXPORT]: templates.exportOne,
+  [CH.WORKSPACE_OPEN]: workspace.open,
+  [CH.WORKSPACE_CLOSE]: workspace.close,
+  [CH.WORKSPACE_LIST]: workspace.list,
+  [CH.WORKSPACE_RECENT]: workspace.recent,
+  [CH.WORKSPACE_REMOVE]: workspace.remove,
+  [CH.WORKSPACE_LIST_FILES]: workspace.listFiles,
+  [CH.WORKSPACE_INDEX]: workspace.index,
+  [CH.SEARCH_START]: search.start,
+  [CH.SEARCH_CANCEL]: search.cancel,
+  [CH.TX_PREVIEW]: tx.preview,
+  [CH.TX_APPLY]: tx.apply,
+  [CH.TX_UNDO]: tx.undo,
+  [CH.TX_LIST]: tx.list,
+  [CH.FS_LIST_DIR]: fsh.listDir,
+  [CH.FS_CREATE_FILE]: fsh.createFile,
+  [CH.FS_CREATE_FOLDER]: fsh.createFolder,
+  [CH.FS_RENAME]: fsh.rename,
+  [CH.FS_MOVE]: fsh.move,
+  [CH.FS_COPY]: fsh.copy,
+  [CH.FS_DELETE]: fsh.del,
+  [CH.FS_DUPLICATE]: fsh.duplicate,
+  [CH.SPELL_LANGUAGES]: spell.languages,
+  [CH.SPELL_SET_LANGUAGE]: spell.setLanguage,
+  [CH.SPELL_ADD_WORD]: spell.addWord,
+  [CH.SPELL_REMOVE_WORD]: spell.removeWord,
+  [CH.SPELL_WORDS]: spell.words,
+  [CH.GRAMMAR_CHECK]: grammar.check,
+  [CH.GRAMMAR_CANCEL]: grammar.cancel,
+  [CH.PDF_EXPORT]: pdf.exportDoc,
+  [CH.PDF_CANCEL]: pdf.cancel,
+  [CH.PDF_PICK_DIR]: pdf.pickDir,
+  [CH.PALETTES_LIST]: palettes.list,
+  [CH.PALETTES_SAVE]: palettes.save,
+  [CH.PALETTES_UPDATE]: palettes.update,
+  [CH.PALETTES_DUPLICATE]: palettes.duplicate,
+  [CH.PALETTES_DELETE]: palettes.remove,
+  [CH.PALETTES_IMPORT]: palettes.importFiles,
+  [CH.PALETTES_EXPORT]: palettes.exportOne,
+  [CH.PRESETS_LIST]: presets.list,
+  [CH.PRESETS_SAVE]: presets.save,
+  [CH.PRESETS_UPDATE]: presets.update,
+  [CH.PRESETS_DUPLICATE]: presets.duplicate,
+  [CH.PRESETS_DELETE]: presets.remove,
+  [CH.PRESETS_IMPORT]: presets.importFiles,
+  [CH.PRESETS_EXPORT]: presets.exportOne,
+  [CH.PRESETS_EXPORT_BUNDLE]: presets.exportBundle,
+  [CH.SNIPPETS_LIST]: snippets.list,
+  [CH.SNIPPETS_SAVE]: snippets.save,
+  [CH.SNIPPETS_UPDATE]: snippets.update,
+  [CH.SNIPPETS_DUPLICATE]: snippets.duplicate,
+  [CH.SNIPPETS_DELETE]: snippets.remove,
+  [CH.SNIPPETS_IMPORT]: snippets.importFiles,
+  [CH.SNIPPETS_EXPORT]: snippets.exportOne,
+  [CH.PDF_ASSET]: pdf.asset,
+  [CH.PDF_PRINT]: print.printDoc,
+  [CH.PANDOC_DETECT]: pandoc.detect,
+  [CH.PANDOC_TEST]: pandoc.test,
+  [CH.PANDOC_CANCEL]: pandoc.cancel,
+  [CH.PANDOC_EXPORT_DOCX]: pandoc.exportDocx,
+  [CH.PANDOC_EXPORT_RTF]: pandoc.exportRtf,
+  [CH.EXPORT_WRITE]: doc.exportWrite,
+  [CH.EXPORT_EXISTS]: doc.exportExists,
+  [CH.MIGRATION_PICK]: migration.pick,
+  [CH.MIGRATION_SCAN]: migration.scan,
+  [CH.MIGRATION_CANCEL]: migration.cancel,
+  [CH.MIGRATION_PICK_DEST]: migration.pickDestination,
+  [CH.MIGRATION_COPY]: migration.copy,
+  [CH.MIGRATION_CONVERT]: migration.convert,
+  [CH.MIGRATION_REVERT]: migration.revert,
+  [CH.EXPORT_TREE]: doc.exportTree,
+});

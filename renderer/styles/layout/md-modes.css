@@ -1,0 +1,22 @@
+/* editing modes + divider */
+.md-editor{container-type:inline-size}
+.md-panes{--sr:.5;--dw:6px}
+.md-src,.md-prev{min-height:0;min-width:0}
+.md-src{order:0;flex:var(--sr) 1 0;border-right:0}
+.md-prev{order:2;flex:calc(1 - var(--sr)) 1 0}
+.md-div{order:1;flex:none;width:var(--dw);cursor:col-resize;background:var(--border);touch-action:none;transition:background-color var(--t-fast)}
+.md-div:hover,.md-div:focus-visible,.md-div.is-drag{background:var(--accent-l);outline:0}
+.md-panes.is-drag{user-select:none;cursor:col-resize}
+.md-editor[data-mode=source] .md-div,.md-editor[data-mode=preview] .md-div{display:none}
+.md-editor[data-mode=source] .md-src,.md-editor[data-mode=preview] .md-prev{flex:1 1 0}
+.md-editor[data-mode=previewLeft] .md-src{order:2}
+.md-editor[data-mode=previewLeft] .md-prev{order:0}
+.md-seg>div button{display:inline-flex;align-items:center;justify-content:center;transition:background-color var(--t-fast),color var(--t-fast)}
+.md-seg>div button:not(.is-on):not(:disabled):hover{background:var(--hover);color:var(--text)}
+.md-seg>div .md-seg__more{padding:0 6px;font-size:9px}.md-seg .ic--chev{width:11px;height:11px;flex:none}
+@container (max-width:640px){
+  .md-panes{flex-direction:column}
+  .md-div{width:auto;height:var(--dw);cursor:row-resize}
+  .md-panes.is-drag{cursor:row-resize}
+}
+.md-seg button:not(:disabled),.md-seg button *,.md-tab,.md-tab *{cursor:pointer;-webkit-user-select:none;user-select:none}

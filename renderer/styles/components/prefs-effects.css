@@ -1,0 +1,5 @@
+.md-src{font-family:var(--ed-font,var(--mono));font-size:var(--ed-size,12.5px);line-height:var(--ed-lh,1.75)}
+html[data-density=compact]{--tabs-h:28px;--status-h:22px}
+html[data-caret=thick] .md-cm .cm-editor .cm-cursor{border-left-width:3px}
+html[data-caret=block] .md-cm .cm-editor .cm-cursor{border-left-width:.6em;opacity:.45}
+.lv-focus-ring :focus-visible{outline:3px solid var(--accent)!important;outline-offset:2px!important;box-shadow:0 0 0 5px color-mix(in srgb,var(--accent) 30%,transparent)}

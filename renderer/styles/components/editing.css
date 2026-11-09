@@ -1,0 +1,8 @@
+.lk { display: grid; gap: 10px; }
+.lk-row { display: grid; gap: 4px; }
+.lk-row label { font-size: 12px; opacity: .75; }
+.lk-row input { width: 100%; box-sizing: border-box; padding: 6px 8px; font: inherit; color: var(--text); background: var(--surface); border: 1px solid var(--border-2); border-radius: var(--r); outline: 0; transition: border-color var(--t-fast), box-shadow var(--t-fast); }
+.lk-row input:focus { border-color: var(--accent); box-shadow: var(--focus-shadow); }
+.lk-row input[aria-invalid] { border-color: var(--danger); }
+.lk-err { min-height: 1.2em; font-size: 12px; color: var(--danger); }
+[data-cmd="fmt.heading"][data-level]:not([data-level="0"])::after { content: "H" attr(data-level); margin-left: 4px; font-size: 10px; font-weight: 700; }

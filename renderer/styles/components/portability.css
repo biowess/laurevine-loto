@@ -1,0 +1,10 @@
+/* Portability badges on Insert buttons and the mode-bar indicator */
+.rbtn__badge{margin-left:4px;padding:0 4px;border-radius:var(--r);border:1px solid currentColor;font-size:9px;font-weight:600;letter-spacing:.04em;line-height:13px;opacity:.7;vertical-align:middle}
+.rbtn--lg .rbtn__badge{display:block;margin:2px auto 0;width:max-content}
+.rbtn__badge.pt-gfm{color:#2e9d5b}
+.rbtn__badge.pt-extended{color:#d98a00}
+.rbtn__badge.pt-app-specific{color:#d64545}
+.md-seg .md-port{margin-left:6px;color:#d98a00;border-color:currentColor}
+.md-seg .md-port[hidden]{display:none}
+.pt-pop{width:300px}
+.pt-note{padding:0 8px 4px;font-size:11.5px;line-height:1.35;opacity:.75}

@@ -1,0 +1,6 @@
+#prev[data-pv-theme=journal]{--pv-tf:"Merriweather",Georgia,var(--pv-sfb);--pv-hf:"Merriweather",var(--pv-sfb);--pv-hw:900;--pv-nf:"Source Sans 3",var(--pv-nfb);--pv-scale:.9;--pv-ls:-.02em;--pv-h1:2.4em;--pv-h2:1.35em;--pv-h3:1.1em;--pv-r:2px}
+#prev[data-pv-theme=journal] h1{padding:.2em 0 .45em;border-bottom:1px solid color-mix(in srgb,var(--pv-rule) 55%,transparent);line-height:1.1}
+#prev[data-pv-theme=journal] h1+p{font-size:1.08em;line-height:1.5;color:var(--text-2)}
+#prev[data-pv-theme=journal] h2{margin-top:2.4em;font:800 .95em var(--pv-nf);letter-spacing:.1em;text-transform:uppercase;color:var(--pv-link)}
+#prev[data-pv-theme=journal] h3{font-weight:700}
+#prev[data-pv-theme=journal] blockquote{padding:.6em 0;border:0;border-top:1px solid color-mix(in srgb,var(--pv-rule) 55%,transparent);border-bottom:1px solid color-mix(in srgb,var(--pv-rule) 55%,transparent);border-radius:0;background:none;font-size:1.1em;font-style:italic}

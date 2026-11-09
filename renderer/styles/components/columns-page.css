@@ -1,0 +1,9 @@
+.lv-colcard .md-card{width:100%;align-items:stretch;gap:6px}
+.lv-colprev{display:block;aspect-ratio:3/4;padding:8%;background:var(--surface,#fff);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.lv-colbody{display:block;height:100%;overflow:hidden}
+.lv-colprev i{display:block;height:2px;margin:0 0 3px;background:var(--text-2,#888);opacity:.5;break-inside:avoid}
+.lv-colprev b{display:block;height:5px;width:60%;margin:0 0 4px;background:var(--text,#222);opacity:.8}
+.lv-colprev b.is-span{width:100%;column-span:all}
+.lv-colprev u{display:block;height:14px;margin:0 0 3px;background:var(--accent);opacity:.35;break-inside:avoid;text-decoration:none}
+.lv-colprev u.is-span{column-span:all}.lv-colprev u.is-float{width:48%;float:right}
+.lv-colset{border:0;margin:10px 0 0;padding:0;min-width:0}.lv-colset:disabled{opacity:.5}

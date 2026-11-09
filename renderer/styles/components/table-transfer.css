@@ -1,0 +1,12 @@
+/* Paste as table and Text to Table popovers */
+.t2-pop { padding: 10px; display: flex; flex-direction: column; gap: 8px; min-width: 240px; font-size: 12px; color: var(--text); }
+.t2-title { font-weight: 600; }
+.t2-info { min-height: 16px; }
+.t2-info.is-err { color: var(--danger, #b3261e); }
+.t2-row { display: flex; align-items: center; gap: 6px; }
+.t2-pop select { padding: 4px 6px; font: inherit; color: var(--text); background: var(--bg); border: 1px solid var(--border-2); border-radius: var(--r); }
+.t2-btns { display: flex; justify-content: flex-end; gap: 6px; }
+.t2-btns button { padding: 4px 10px; font: inherit; color: var(--text); background: var(--bg); border: 1px solid var(--border-2); border-radius: var(--r); cursor: pointer; }
+.t2-btns button:disabled { opacity: .5; cursor: default; }
+.t2-btns .t2-go { background: var(--accent, #b8892b); border-color: var(--accent, #b8892b); color: #fff; }
+.t2-btns button:focus-visible { outline: 2px solid var(--accent, #b8892b); outline-offset: 1px; }

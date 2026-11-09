@@ -1,0 +1,258 @@
+/* Link Integrity Panel Styles */
+.lip {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  font-size: 12px;
+  color: var(--text);
+  background: var(--surface);
+}
+
+.lip__hdr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  gap: 8px;
+  flex: none;
+}
+
+.lip__scope {
+  display: flex;
+  flex: 1;
+  border-radius: var(--r);
+  background: var(--hover);
+  padding: 2px;
+  gap: 2px;
+}
+
+.lip__sc-btn {
+  flex: 1;
+  border: none;
+  background: none;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 3px 8px;
+  border-radius: var(--r);
+  color: var(--text-2);
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+
+.lip__sc-btn.is-active {
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: 0 1px 2px color-mix(in srgb, var(--text) 12%, transparent);
+}
+
+.lip__tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  flex: none;
+}
+
+.lip__tab {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  background: var(--surface);
+  color: var(--text-2);
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: left;
+}
+
+.lip__tab:hover {
+  background: var(--hover);
+}
+
+.lip__tab.is-active {
+  border-color: var(--accent);
+  background: var(--sel-bg);
+  color: var(--text);
+}
+
+.lip__cnt {
+  font-size: 10px;
+  padding: 1px 5px;
+  border-radius: var(--r);
+  background: var(--hover);
+  color: var(--text-2);
+  font-weight: 600;
+}
+
+.lip__tab.is-active .lip__cnt {
+  background: var(--accent);
+  color: var(--surface);
+}
+
+.lip__tb {
+  padding: 6px 12px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex: none;
+}
+
+.lip__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 500;
+  border-radius: var(--r);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.lip__btn:hover {
+  background: var(--hover);
+}
+
+.lip__btn--cancel {
+  border-color: var(--danger);
+  color: var(--danger);
+}
+
+.lip__body {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.lip__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.lip__row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: background 0.1s ease;
+}
+
+.lip__row:hover {
+  background: var(--hover);
+}
+
+.lip__info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.lip__tgt {
+  font-size: 12px;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.lip__loc {
+  font-size: 10px;
+  color: var(--text-2);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.lip__badge {
+  flex: none;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: var(--r);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.lip__badge--bad {
+  background: color-mix(in srgb, var(--danger) 14%, transparent);
+  color: var(--danger);
+}
+
+.lip__badge--warn {
+  background: color-mix(in srgb, var(--warn) 16%, transparent);
+  color: var(--warn);
+}
+
+.lip__badge--ok {
+  background: color-mix(in srgb, var(--success) 16%, transparent);
+  color: var(--success);
+}
+
+.lip__fix {
+  flex: none;
+  padding: 3px 8px;
+  font-size: 11px;
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.lip__fix:hover {
+  background: var(--hover);
+}
+
+.lip__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 32px 16px;
+  color: var(--text-2);
+  font-size: 12px;
+  text-align: center;
+}
+
+.lip__empty svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--text-2);
+}
+
+.lip__dlg {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.lip__sub {
+  color: var(--text-2);
+  font-size: 12px;
+}
+
+.lip__inp {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  font-size: 13px;
+  box-sizing: border-box;
+  background: var(--surface);
+  color: var(--text);
+}

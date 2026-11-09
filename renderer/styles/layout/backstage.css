@@ -1,0 +1,65 @@
+/* ---------- backstage ---------- */
+.backstage { position: absolute; z-index: 60; left: 0; right: 0; top: var(--titlebar-h); bottom: 0; display: flex; background: var(--surface); animation: fadeIn 150ms ease; }
+.bs-nav { width: 224px; flex: none; background: var(--app-bg); border-right: 1px solid var(--border); padding: 10px 0; display: flex; flex-direction: column; }
+.bs-back { align-self: flex-start; margin: 0 0 10px 12px; width: 34px; height: 34px; padding: 0; display: grid; place-items: center; border: 0; background: transparent; border-radius: 50%; }
+.bs-back:hover { background: var(--hover); }
+.bs-item { display: flex; align-items: center; gap: 12px; padding: 11px 20px; border: 0; border-left: 3px solid transparent; background: transparent; text-align: left; font-size: 14px; transition: background-color var(--t-fast); }
+.bs-item:hover { background: var(--hover); } .bs-item.is-active { background: var(--sel-bg); border-left-color: var(--accent); color: var(--accent); font-weight: 500; }
+.bs-main { flex: 1; min-width: 0; overflow: auto; padding: 34px 48px; }
+.bs-panel { max-width: 760px; }
+.bs-panel h2 { margin: 0 0 6px; font-size: 22px; font-weight: 600; color: var(--accent); }
+.bs-lead { margin: 0 0 18px; color: var(--text-2); font-size: 14px; }
+.bs-note { color: var(--text-2); font-size: 12.5px; margin: 14px 0 0; }
+.bs-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+.bs-card { display: flex; align-items: flex-start; gap: 12px; text-align: left; padding: 14px 16px; border: 1px solid var(--border); border-radius: var(--r); background: var(--surface); transition: background-color var(--t-fast), border-color var(--t-fast); }
+.bs-card:hover:not(:disabled) { background: var(--sel-bg); border-color: var(--sel-border); }
+.bs-card:disabled { opacity: .5; }
+.bs-card .ic { width: 22px; height: 22px; color: var(--accent); margin-top: 1px; }
+.bs-card b { display: block; font-weight: 500; font-size: 14px; } .bs-card small { display: block; color: var(--text-2); margin-top: 2px; font-size: 12px; }
+.bs-list { display: flex; flex-direction: column; border-top: 1px solid var(--border); }
+.bs-row { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 14px 4px; border-bottom: 1px solid var(--border); }
+.bs-row b { font-weight: 500; display: block; } .bs-row small { color: var(--text-2); display: block; margin-top: 2px; }
+.bs-row--col { flex-direction: column; align-items: stretch; } .bs-row input[type=checkbox] { width: 18px; height: 18px; accent-color: var(--accent); }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+/* ---------- backstage About page ---------- */
+@font-face { font-family: 'Cormorant Garamond'; src: url('../../fonts/cormorant-garamond/CormorantGaramond[wght].ttf') format('truetype'); font-weight: 100 900; font-style: normal; }
+@font-face { font-family: 'Cormorant Garamond'; src: url('../../fonts/cormorant-garamond/CormorantGaramond-Italic[wght].ttf') format('truetype'); font-weight: 100 900; font-style: italic; }
+.bs-about { max-width: 640px; }
+.bs-about__hero { text-align: center; padding: 48px 0 36px; }
+.bs-about__logo .bs-about__icon { width: 64px; height: 64px; display: block; margin: 0 auto 16px; background-color: var(--accent); -webkit-mask: url(../../assets/loto-icon-mono.svg) center / contain no-repeat; mask: url(../../assets/loto-icon-mono.svg) center / contain no-repeat; }
+[data-theme="dark"] .bs-about__logo .bs-about__icon { background-color: var(--accent-l); }
+.bs-about__name { margin: 0 0 6px; font-family: 'Cormorant Garamond', serif; font-weight: 700; font-style: italic; line-height: 1; letter-spacing: .08em; display: flex; align-items: baseline; justify-content: center; gap: .18em; }
+.bs-about__name-laurevine { font-size: 38px; color: var(--text); }
+.bs-about__name-plum { font-size: 28px; color: var(--text); }
+.bs-about__version { margin: 0 0 14px; font-size: 13px; color: var(--text-2); }
+.bs-about__tagline { margin: 0; font-size: 14px; color: var(--text-2); line-height: 1.6; }
+.bs-about__tm { margin: 28px 0 0; padding: 14px 20px; border: 1px solid var(--border); border-radius: var(--r); font-size: 13px; color: var(--text-2); text-align: center; background: var(--app-bg); }
+.bs-about__oss { margin-top: 32px; }
+.bs-about__oss h3 { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; color: var(--text-2); margin: 0 0 12px; }
+.bs-about__tbl { width: 100%; border-collapse: collapse; font-size: 13px; }
+.bs-about__tbl th { text-align: left; padding: 6px 12px; font-weight: 600; border-bottom: 2px solid var(--border); color: var(--text-2); }
+.bs-about__tbl td { padding: 8px 12px; border-bottom: 1px solid var(--border); }
+.bs-about__tbl tr:last-child td { border-bottom: none; }
+.bs-about__tbl tr:hover td { background: var(--hover); }
+
+/* Preferences sections (IDE-style grouped layout) */
+.bs-prefs-section { margin-bottom: 28px; }
+.bs-prefs-section__head { font-size: 13px; font-weight: 600; color: var(--text-2); text-transform: uppercase; letter-spacing: .05em; margin-bottom: 4px; }
+.bs-prefs-section__desc { font-size: 13px; color: var(--text-2); margin: 0 0 10px; }
+.bs-prefs-list { border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; }
+.bs-prefs-row { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 14px 16px; background: var(--surface); border-bottom: 1px solid var(--border); }
+.bs-prefs-row:last-child { border-bottom: 0; }
+.bs-prefs-row__info { flex: 1; min-width: 0; }
+.bs-prefs-row__info b { font-weight: 500; font-size: 14px; display: block; }
+.bs-prefs-row__info small { display: block; color: var(--text-2); font-size: 12px; margin-top: 2px; }
+.bs-prefs-row__ctrl { flex: none; display: flex; align-items: center; gap: 8px; }
+.bs-prefs-row__ctrl input[type=number] { padding: 4px 6px; border: 1px solid var(--border-2); border-radius: var(--r); background: var(--app-bg); color: var(--text); font-size: 13px; }
+.bs-prefs-row__ctrl input[type=checkbox] { width: 18px; height: 18px; accent-color: var(--accent); }
+.bs-prefs-row__ctrl label { font-size: 0; } /* hide duplicate checkbox label text */
+.bs-prefs-row__ctrl label input { font-size: initial; }
+
+
+/* Backstage pages share one right limit (zero specificity, so narrower per-page max-widths still win); heading rules and right-aligned actions stop here instead of the window edge. */
+:where(.md-bmain) > :where(:not(.lv-hexp)) { max-width: 1000px; }
+/* Home sections are list-wide (680px) so Clear lines up with the list edge; the title rule width is set per page in frame.js. */
+.lv-home { max-width: 680px; }

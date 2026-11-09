@@ -1,0 +1,8 @@
+#prev[data-pv-theme=literary]{--pv-tf:"Libre Baskerville",Georgia,var(--pv-sfb);--pv-hf:"Cinzel","Libre Baskerville",var(--pv-sfb);--pv-hw:600;--pv-scale:.92;--pv-ls:.05em;--pv-h1:1.9em;--pv-h2:1.35em;--pv-h3:1.1em;--pv-r:2px;--pv-gap:1.1em}
+#prev[data-pv-theme=literary] p{text-align:justify;hyphens:auto}
+#prev[data-pv-theme=literary] h1::after{content:"";display:block;width:3.5em;height:1px;margin:.7em auto 0;background:var(--pv-quote)}
+#prev[data-pv-theme=literary] h1,#prev[data-pv-theme=literary] h2{text-align:center}
+#prev[data-pv-theme=literary] h3{font-family:var(--pv-tf);font-style:italic;font-weight:400;letter-spacing:0}
+#prev[data-pv-theme=literary] blockquote{padding:.4em 2em;border-left:0;background:none;text-align:center;font-style:italic}
+#prev[data-pv-theme=literary] hr{height:auto;background:none;text-align:center;overflow:visible}
+#prev[data-pv-theme=literary] hr::after{content:"* * *";letter-spacing:.6em;color:var(--text-2)}

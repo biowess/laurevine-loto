@@ -1,0 +1,19 @@
+/* Tools > Inspect Markdown Dialect result dialog */
+.lv-dia-dlg .dlg__body { overflow: auto; }
+.dia { display: flex; flex-direction: column; gap: 10px; font-size: 13px; color: var(--text); }
+.dia-lead { margin: 0; }
+.dia-sub { margin: 6px 0 0; font-size: 13px; }
+.dia-list, .dia-fits { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.dia-item { padding: 8px 10px; border: 1px solid var(--border-2); border-radius: var(--r); }
+.dia-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.dia-count { margin-left: auto; font-size: 12px; opacity: .75; }
+.dia-chip { padding: 1px 6px; font-size: 11px; border: 1px solid var(--border-2); border-radius: var(--r); }
+.dia-chip.is-warn { color: var(--danger, #b3261e); border-color: currentColor; }
+.dia-text { margin: 4px 0 6px; font-size: 12px; opacity: .85; }
+.dia-jumps { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
+.dia-jump, .dia-more { padding: 2px 8px; font: inherit; font-size: 12px; color: var(--text); background: var(--bg); border: 1px solid var(--border-2); border-radius: var(--r); cursor: pointer; }
+.dia-jump:hover, .dia-more:hover { background: var(--hover, rgba(127, 127, 127, .15)); }
+.dia-jump:focus-visible, .dia-more:focus-visible { outline: 2px solid var(--accent, #b8892b); outline-offset: 1px; }
+.dia-note { font-size: 12px; opacity: .75; }
+.dia-fit { display: flex; justify-content: space-between; gap: 12px; padding: 4px 8px; border-radius: var(--r); }
+.dia-fit.is-best { background: var(--hover, rgba(127, 127, 127, .15)); }

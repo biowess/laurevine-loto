@@ -1,0 +1,146 @@
+/* Workspace Tools Dialogs and Lists */
+.wt-dlg {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.wt-row {
+  display: flex;
+  gap: 12px;
+}
+
+.wt-field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.wt-field label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.wt-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+}
+
+.wt-opt {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.wt-sub {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.wt-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-height: 280px;
+  overflow-y: auto;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--r);
+  padding: 6px;
+  background: var(--surface-bg);
+}
+
+.wt-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 8px;
+  border-radius: var(--r);
+  cursor: pointer;
+  user-select: none;
+}
+
+.wt-item:hover {
+  background: var(--surface-hover);
+}
+
+.wt-item__content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.wt-item__names {
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.wt-from {
+  color: var(--text-muted);
+}
+
+.wt-to {
+  color: var(--text-main);
+}
+
+.wt-item__dir,
+.wt-item__path {
+  font-size: 11px;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.wt-badge {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 2px 6px;
+  border-radius: var(--r);
+  flex-shrink: 0;
+}
+
+.wt-badge--ok {
+  background: var(--badge-ok-bg, rgba(46, 160, 67, 0.15));
+  color: var(--badge-ok-fg, #2ea043);
+}
+
+.wt-badge--err {
+  background: var(--badge-err-bg, rgba(248, 81, 73, 0.15));
+  color: var(--badge-err-fg, #f85149);
+}
+
+.wt-ico {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--r);
+  background: var(--surface-subtle);
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.wt-actions {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.wt-empty {
+  padding: 24px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 13px;
+}

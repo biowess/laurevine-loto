@@ -1,0 +1,21 @@
+.nv-a11y-list{list-style:none;margin:.5em 0 0;padding:0;max-height:50vh;overflow:auto}
+.nv-a11y-row{display:flex;gap:.6em;align-items:baseline;width:100%;padding:.35em .5em;border:0;border-bottom:1px solid var(--border);background:none;color:inherit;font:inherit;text-align:left;cursor:pointer}
+.nv-a11y-row:hover,.nv-a11y-row:focus-visible{background:var(--hover)}
+.nv-a11y-sev{flex:none;min-width:4.5em;font-size:.8em;font-weight:600;text-transform:uppercase}
+.nv-a11y-loc{flex:none;min-width:4em;color:var(--text-2)}
+.nv-a11y-scroll{max-height:50vh;overflow:auto}
+.nv-a11y-t{width:100%;border-collapse:collapse}
+.nv-a11y-t th,.nv-a11y-t td{padding:.3em .5em;border-bottom:1px solid var(--border);text-align:left}
+.nv-a11y-t tr.is-fail td{font-weight:600}
+.sr-only{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;border:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;animation-iteration-count:1!important;transition-duration:.01ms!important;transition-delay:0s!important;scroll-behavior:auto!important}}
+.reduce-motion *,.reduce-motion *::before,.reduce-motion *::after{animation-duration:.01ms!important;animation-delay:0s!important;animation-iteration-count:1!important;transition-duration:.01ms!important;transition-delay:0s!important;scroll-behavior:auto!important}
+.reduce-motion .sr__bar::after{animation:none;width:100%}
+.reduce-motion .md-ok i,.reduce-motion .save-state .dot,.reduce-motion .md-tab .dot{animation:none!important}
+.reduce-motion .md-cm .cm-line.nv-flash{animation:none;background:color-mix(in srgb,var(--accent-l) 30%,transparent)}
+.reduce-motion #src.lv-focus .cm-line{transition:none}
+
+.nv-a11y-link{padding:0;border:0;background:none;color:var(--accent);font:inherit;text-align:left;cursor:pointer;text-decoration:underline}
+.nv-a11y-link:hover,.nv-a11y-link:focus-visible{color:var(--text)}
+.nv-a11y .field{margin-top:10px}
+.nv-a11y-prev{font:12px/1.45 var(--mono);white-space:pre;overflow:auto}

@@ -1,0 +1,29 @@
+/* Extended Markdown in the preview: callouts, footnotes, definition lists, abbreviations, page break */
+#prev .lt-callout{--c:var(--accent);margin:1em 0;padding:.6em 1em;border-left:4px solid var(--c);border-radius:var(--r);background:color-mix(in srgb,var(--c) 10%,var(--surface,transparent))}
+#prev .lt-callout-title{margin-bottom:.35em;font-weight:600;color:color-mix(in srgb,var(--c) 75%,var(--text))}
+#prev details.lt-callout>summary{cursor:pointer}
+#prev .lt-callout>:last-child{margin-bottom:0}
+#prev .lt-callout-tip,#prev .lt-callout-success{--c:#2e9d5b}
+#prev .lt-callout-important{--c:#8a4fd6}
+#prev .lt-callout-warning{--c:#d98a00}
+#prev .lt-callout-caution,#prev .lt-callout-danger,#prev .lt-callout-bug{--c:#d64545}
+#prev .lt-callout-question{--c:#0f9aa8}
+#prev .lt-callout-example{--c:#7a62d6}
+#prev .lt-callout-quote{--c:#7a7a7a}
+[data-theme="dark"] #prev .lt-callout{--c:var(--accent-l);background:color-mix(in srgb,var(--c) 14%,var(--surface,transparent))}
+[data-theme="dark"] #prev .lt-callout-tip,[data-theme="dark"] #prev .lt-callout-success{--c:#4fc783}
+[data-theme="dark"] #prev .lt-callout-important{--c:#b68af0}
+[data-theme="dark"] #prev .lt-callout-warning{--c:#f0b03a}
+[data-theme="dark"] #prev .lt-callout-caution,[data-theme="dark"] #prev .lt-callout-danger,[data-theme="dark"] #prev .lt-callout-bug{--c:#ff7a7a}
+[data-theme="dark"] #prev .lt-callout-question{--c:#4cc9d6}
+[data-theme="dark"] #prev .lt-callout-example{--c:#a592f5}
+[data-theme="dark"] #prev .lt-callout-quote{--c:#a0a0a0}
+#prev .lt-fnref{font-size:.75em;line-height:0}
+#prev .lt-fnref a,#prev .lt-fnback{text-decoration:none}
+#prev .lt-footnotes{margin-top:2em;padding-top:.6em;border-top:1px solid var(--pv-rule,var(--border));font-size:.9em}
+#prev .lt-footnotes ol{padding-left:1.4em}
+#prev .lt-footnotes p{margin:.2em 0}
+#prev dt{margin-top:.8em;font-weight:600}
+#prev dd{margin:.2em 0 0 1.6em}
+#prev abbr[title]{text-decoration:underline dotted;cursor:help}
+#prev .lt-pagebreak{margin:1.5em 0;padding-top:.3em;border-top:2px dashed var(--pv-rule,var(--border));text-align:center;font:600 .7em var(--font);letter-spacing:.05em;text-transform:uppercase;opacity:.7}

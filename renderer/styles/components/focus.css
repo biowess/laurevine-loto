@@ -1,0 +1,13 @@
+/* 55a: a visible focus ring on every focusable control (zero specificity, so local offsets still apply); the editor draws its own. */
+:where(button, input, select, textarea, summary, a[href], [tabindex], [role="tab"], [role="treeitem"], [role="menuitem"], [role="menuitemcheckbox"]):where(:focus-visible):where(:not(.cm-editor *)) { outline: 2px solid var(--accent) !important; }
+/* Text fields that draw their own border/glow on focus: drop the square outline so only that shows. */
+.sr__qi:focus-visible, .sr__gi:focus-visible, .md-sbh input:focus-visible, .sb-filter input:focus-visible, .lk-row input:focus-visible, .cd__num input:focus-visible, .input:focus-visible, .select:focus-visible, .code:focus-visible, textarea.ins-area:focus-visible, .combo__in:focus-visible, .doc-title-input:focus-visible { outline: 0 !important; }
+.rbtn:focus-visible, .tab:focus-visible, .tbtn:focus-visible, .md-tab:focus-visible, .md-sw button:focus-visible, .md-bnav button:focus-visible, .menu__item:focus-visible,
+[role="treeitem"]:focus-visible, .md-prev:focus-visible, .sr__list:focus-visible, .dlg__close:focus-visible { outline-offset: -2px; }
+.md-tab em:focus-visible { outline-offset: 0; border-radius: var(--r); }
+.md-prev:focus-visible { box-shadow: inset 0 0 0 1px var(--accent); }
+@media (forced-colors: active) { :focus-visible { outline: 2px solid Highlight !important; } }
+
+.skip-links { position: fixed; top: 0; left: 0; z-index: 1000; display: flex; }
+.skip-link { position: absolute; left: -9999px; top: 0; padding: 6px 12px; border: 1px solid var(--accent); border-radius: var(--r); background: var(--surface); color: var(--text); font-size: 12.5px; box-shadow: 0 2px 8px rgba(0, 0, 0, .25); white-space: nowrap; }
+.skip-link:focus { position: static; margin: 8px 0 0 8px; }

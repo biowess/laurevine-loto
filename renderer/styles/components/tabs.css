@@ -1,0 +1,15 @@
+.md-tabs{overflow:hidden;gap:0;padding:0 4px 0 8px}
+.md-tabs [hidden]{display:none}
+.md-tabs__scroll{display:flex;align-items:flex-end;gap:1px;flex:0 1 auto;min-width:0;overflow-x:auto;scrollbar-width:none;position:relative}
+.md-tabs__scroll::-webkit-scrollbar{display:none}
+.md-tabs>.tbtn{flex:none;align-self:center;position:relative;top:0.5px;display:inline-grid;place-items:center;width:28px;height:28px;margin:0}.md-tabs>.tbtn .ic{width:14px;height:14px}
+.md-tabscroll:disabled{opacity:.35}
+.md-tab{user-select:none}
+.md-tab--pin{min-width:0;max-width:120px;padding:0 8px;gap:5px}
+.md-tab--pin em,.md-tab--pin small{display:none}
+.md-tab__del{color:var(--danger,#c0392b)}
+.md-tab.is-drag{opacity:.6}
+.md-tab.is-drop-l::after,.md-tab.is-drop-r::after{content:"";position:absolute;top:2px;bottom:2px;width:2px;background:var(--accent);border-radius:1px;z-index:3}
+.md-tab.is-drop-l::after{left:-2px}
+.md-tab.is-drop-r::after{right:-2px}
+.lv-tabs__list{margin:8px 0 0;padding-left:18px;max-height:160px;overflow:auto}

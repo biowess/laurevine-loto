@@ -1,0 +1,22 @@
+#prev .lt-code{margin:.8em 0;border:1px solid var(--pv-rule,var(--border));border-radius:var(--r);background:var(--pv-code-bg,var(--hover));overflow:hidden}
+#prev .lt-code pre{margin:0;border:0;border-radius:0;background:none}
+#prev .lt-code-head{display:flex;justify-content:space-between;align-items:center;padding:.25em .8em;border-bottom:1px solid var(--pv-rule,var(--border));font:600 .68em var(--font);letter-spacing:.05em;text-transform:uppercase;color:var(--text-2);user-select:none}
+#prev .lt-copy{cursor:pointer;padding:.15em .6em;border-radius:var(--r)}
+#prev .lt-copy:hover,#prev .lt-copy:focus-visible{color:var(--accent-d);outline:1px solid var(--border)}
+#prev .lt-l{display:block}
+#prev.pv-ln pre code{counter-reset:lt}
+#prev.pv-ln .lt-l{position:relative;padding-left:3.2em}
+#prev.pv-ln .lt-l::before{counter-increment:lt;content:counter(lt);position:absolute;left:0;width:2.4em;text-align:right;color:var(--text-2);opacity:.6;user-select:none}
+#prev .hljs-keyword,#prev .hljs-doctag,#prev .hljs-selector-tag,#prev .hljs-built_in,#prev .hljs-meta{color:var(--t-key)}
+#prev .hljs-string,#prev .hljs-regexp,#prev .hljs-template-variable,#prev .hljs-addition{color:var(--t-code)}
+#prev .hljs-number,#prev .hljs-literal,#prev .hljs-symbol,#prev .hljs-bullet,#prev .hljs-attr,#prev .hljs-attribute,#prev .hljs-variable,#prev .hljs-property{color:var(--t-link)}
+#prev .hljs-title,#prev .hljs-type,#prev .hljs-tag,#prev .hljs-name,#prev .hljs-section,#prev .hljs-selector-class,#prev .hljs-selector-id{color:var(--t-head);font-weight:600}
+#prev .hljs-comment,#prev .hljs-quote{color:var(--t-quote);font-style:italic}
+#prev .hljs-deletion{text-decoration:line-through}
+#prev .hljs-emphasis{font-style:italic}#prev .hljs-strong{font-weight:700}
+#prev .lt-code pre{--cpx:.9em;--cpy:.6em;padding:var(--cpy) var(--cpx)}
+#prev[data-pv-code=compact] .lt-code pre{--cpx:.6em;--cpy:.3em}
+#prev[data-pv-code=comfortable] .lt-code pre{--cpx:1.2em;--cpy:1em}
+#prev.pv-ln .lt-code pre{padding-left:0}
+#prev.pv-ln .lt-l{padding-left:calc(var(--cpx) + 3.2em)}
+#prev.pv-ln .lt-l::before{left:var(--cpx);width:2.4em}

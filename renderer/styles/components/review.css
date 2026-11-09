@@ -1,0 +1,29 @@
+/* Review Changes dialog: file list, match rows, inline diff. */
+.rv-dlg .dlg__body { display: flex; flex-direction: column; gap: 8px; max-height: 70vh; }
+.rv-sum { color: var(--text-2); font-size: 12px; }
+.rv-files { overflow: auto; border: 1px solid var(--border); border-radius: var(--r); }
+.rv-file { border-bottom: 1px solid var(--border); }
+.rv-file:last-child { border-bottom: 0; }
+.rv-head { display: flex; align-items: center; gap: 8px; padding: 5px 8px; }
+.rv-name { flex: 1; min-width: 0; text-align: left; background: none; border: 0; padding: 0; color: var(--text); font: inherit; cursor: pointer; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rv-name:hover { color: var(--accent); text-decoration: underline; }
+.rv-tag, .rv-count { color: var(--text-2); font-size: 11px; }
+.rv-warn { display: block; padding: 0 8px 4px 32px; color: var(--danger); font-size: 11px; }
+.rv-warn:empty { display: none; }
+.rv-body { padding: 0 8px 8px 32px; }
+.rv-list { display: flex; flex-direction: column; gap: 2px; margin-bottom: 6px; }
+.rv-match { display: flex; align-items: center; gap: 6px; font-size: 12px; }
+.rv-lnno { color: var(--text-2); min-width: 44px; }
+.rv-match del { color: var(--danger); }
+.rv-match ins { color: #1E6B3A; text-decoration: none; }
+.rv-note { color: var(--text-2); font-size: 11px; padding: 2px 0; }
+.rv-diff { overflow: auto; border: 1px solid var(--border); border-radius: var(--r); font: 12px/1.45 var(--mono); }
+.rv-hunk + .rv-hunk { border-top: 1px dashed var(--border-2); }
+.rv-row { display: flex; white-space: pre-wrap; word-break: break-word; }
+.rv-ln { flex: none; width: 40px; padding-right: 6px; text-align: right; color: var(--text-2); user-select: none; }
+.rv-sg { flex: none; width: 14px; user-select: none; }
+.rv-tx { flex: 1; min-width: 0; }
+.rv-del { background: rgba(179, 38, 30, .1); }
+.rv-add { background: rgba(30, 107, 58, .12); }
+.rv-del mark { background: rgba(179, 38, 30, .28); color: inherit; }
+.rv-add mark { background: rgba(30, 107, 58, .3); color: inherit; }

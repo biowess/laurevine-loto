@@ -1,0 +1,6 @@
+#prev[data-pv-theme=technical]{--pv-bg:var(--surface);--pv-tf:"Source Sans 3","Spline Sans",var(--pv-nfb);--pv-hf:"Source Sans 3",var(--pv-nfb);--pv-hw:650;--pv-scale:1.02;--pv-ls:-.01em;--pv-h1:2.1em;--pv-h2:1.5em;--pv-h3:1.2em}
+#prev[data-pv-theme=technical] h1,#prev[data-pv-theme=technical] h2{padding-bottom:.3em;border-bottom:1px solid var(--pv-rule)}
+#prev[data-pv-theme=technical] h4{color:var(--text-2)}
+#prev[data-pv-theme=technical] :not(pre)>code{background:var(--pv-code-bg);color:var(--pv-link)}
+#prev[data-pv-theme=technical] th{text-transform:uppercase;font-size:.78em;letter-spacing:.06em;color:var(--text-2)}
+#prev[data-pv-theme=technical] .lt-code-head{text-transform:none;font-family:var(--pv-mono);letter-spacing:0}

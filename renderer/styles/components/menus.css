@@ -1,0 +1,70 @@
+/* components.css: popovers, menus, dialogs, forms, toasts, tooltips and the scientific dialog layouts. */
+
+/* ---------- popovers & menus ---------- */
+.popover { max-height: calc(100vh - 16px); position: fixed; z-index: 100; min-width: 160px; max-width: calc(100vw - 12px); overflow: auto; background: var(--surface); border: 1px solid var(--border-2); border-radius: var(--r); box-shadow: var(--shadow-pop); opacity: 0; transform: translateY(-3px) scale(.985); transform-origin: top left; transition: opacity 130ms ease, transform 130ms ease; }
+.popover.is-open { opacity: 1; transform: none; }
+.popover--context { min-width: 200px; }
+.popover--list { min-width: 0; max-height: 320px; }
+.popover--group { min-width: 0; background: var(--surface); padding: 4px 6px 4px; }
+.popover--comments { width: 360px; transform-origin: bottom left; }
+.rgroup-pop { display: flex; flex-direction: column; }
+.rgroup-pop .rgroup__content { height: auto; }
+.rgroup-pop .rrow { flex-wrap: wrap; gap: 2px; max-width: 320px; }
+.rgroup-pop .rbtn--icon, .rgroup-pop .rbtn--icon-menu { width: auto; min-width: 26px; padding: 0 6px; gap: 5px; }
+.rgroup-pop .rbtn--icon .rbtn__label--ico { display: inline; flex: none; max-width: none; font-size: 12px; white-space: nowrap; }
+.rgroup-pop > .rgroup__label { border-top: 1px solid var(--border-2); margin-top: 4px; padding-top: 2px; }
+.menu { display: flex; flex-direction: column; padding: 4px; min-width: 190px; }
+.menu__item { display: flex; align-items: center; gap: 8px; width: 100%; min-height: 28px; padding: 3px 10px 3px 6px; border: 0; border-radius: var(--r); background: transparent; text-align: left; white-space: nowrap; color: var(--text); }
+.menu__item:hover:not(:disabled), .menu__item:focus-visible { background: var(--sel-bg); color: var(--accent); outline: 0; }
+.menu__item:disabled { opacity: .4; }
+.menu__item.is-checked .menu__icon { color: var(--accent); }
+.menu__item--label { cursor: pointer; position: relative; }
+.menu__item--label input { position: absolute; left: 0; top: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
+.menu__icon { width: 18px; display: inline-flex; justify-content: center; flex: none; color: var(--text-2); }
+.menu__label { flex: 1; min-width: 0; }
+.menu__label small { display: block; font-size: 11.5px; color: var(--text-2); }
+.menu kbd { margin-left: 18px; }
+.menu__sw { display: inline-flex; gap: 1px; } .menu__sw i { width: 12px; height: 12px; border-radius: var(--r); }
+.menu__sep { height: 1px; background: var(--border); margin: 4px 2px; }
+.menu__head { padding: 6px 8px 3px; font-size: 11.5px; font-weight: 500; color: var(--text-2); }
+.menu--gallery { min-width: 0; }
+.gallery { display: grid; gap: 6px; padding: 4px; }
+.tile { display: flex; flex-direction: column; align-items: center; gap: 5px; padding: 5px; border: 1px solid transparent; border-radius: var(--r); background: transparent; width: 100%; min-width: 0; }
+.tile:hover, .tile:focus-visible { background: var(--sel-bg); border-color: var(--sel-border); outline: 0; }
+.tile.is-checked { border-color: var(--accent); }
+.tile__label { font-size: 11.5px; line-height: 1.2; text-align: center; color: var(--text); }
+.lp { width: 100px; height: auto; display: block; }
+.shp { display: block; width: 40px; height: 40px; color: var(--accent); }
+.gallery:has(.shp) .tile { padding: 8px 4px 4px; }
+.tp { display: block; position: relative; width: 100%; aspect-ratio: 16 / 9; border: 1px solid; overflow: hidden; }
+.tp i { position: absolute; left: 8%; top: 12%; width: 22%; height: 4%; min-height: 2px; }
+.tp b { position: absolute; left: 8%; top: 26%; width: 56%; height: 9%; }
+.tp s { position: absolute; left: 8%; top: 52%; width: 70%; height: 4%; min-height: 2px; opacity: .6; } .tp s + s { top: 66%; }
+.tp em { position: absolute; right: 8%; bottom: 10%; width: 16%; height: 22%; }
+.gallery .tp { width: 110px; }
+.menu--scroll { max-height: min(440px, calc(100vh - 120px)); overflow-y: auto; }
+.menu__sw { display: inline-flex; gap: 1px; margin-right: 6px; flex: none; }
+.menu__sw i { width: 12px; height: 12px; border-radius: var(--r); box-shadow: inset 0 0 0 1px rgba(128,128,128,.35); display: inline-block; }
+.menu--colors { width: 236px; min-width: 236px; max-width: 236px; padding: 5px 6px; box-sizing: border-box; }
+.menu--colors .menu__head { padding: 5px 4px 3px; font-size: 11.5px; font-weight: 600; color: var(--text); letter-spacing: .01em; }
+.menu--colors .menu__sep { height: 1px; background: var(--border); margin: 5px 2px; }
+.swatches { display: grid; grid-template-columns: repeat(10, 18px); gap: 3px; padding: 1px 2px 3px; justify-content: space-between; }
+.swatches--theme-base { padding-bottom: 4px; }
+.swatches--theme-shades { row-gap: 1px; column-gap: 3px; padding-bottom: 5px; }
+.swatches--recent { min-height: 20px; }
+.swatch { width: 18px; height: 18px; border: 1px solid rgba(0, 0, 0, .16); border-radius: 1px; padding: 0; box-sizing: border-box; cursor: pointer; background-clip: padding-box; transition: transform 90ms ease; position: relative; }
+.swatch--shade { height: 13.5px; border-radius: 0; border: 1px solid rgba(0, 0, 0, .08); }
+.swatch:hover, .swatch:focus-visible { transform: scale(1.18); outline: 2px solid #ffb900; outline-offset: 1px; z-index: 10; box-shadow: 0 0 3px rgba(0, 0, 0, .25); }
+.menu--colors .menu__item { min-height: 26px; padding: 3px 6px; font-size: 12px; }
+.menu--colors .menu__item--none { margin-bottom: 3px; }
+[data-theme="dark"] .swatch { border-color: rgba(255, 255, 255, .2); }
+[data-theme="dark"] .swatch--shade { border-color: rgba(255, 255, 255, .1); }
+.menu--tablegrid { min-width: 0; }
+.tgrid { display: grid; grid-template-columns: repeat(8, 20px); gap: 3px; padding: 2px 8px 8px; }
+.tcell { width: 20px; height: 20px; padding: 0; border: 1px solid var(--border-2); background: var(--surface); border-radius: var(--r); }
+.tcell.is-hot { background: var(--sel-bg); border-color: var(--accent); }
+.menu--symbols { min-width: 0; }
+.symgrid { display: grid; grid-template-columns: repeat(8, 30px); gap: 2px; padding: 2px 6px 6px; }
+.sym { height: 30px; border: 1px solid transparent; border-radius: var(--r); background: transparent; font-size: 16px; }
+.sym:hover, .sym:focus-visible { background: var(--sel-bg); border-color: var(--sel-border); outline: 0; }
+

@@ -1,0 +1,86 @@
+/* ---------- setup wizard ----------
+   Dialog is sized to assets/wizard-bg.png (2560x1600, 8:5, never stretched). The white content region is
+   x 31.13%..100%, y 0..100% of the image; the panel sits inside it. Sizes use cqw (dialog width) so text
+   and spacing scale with the dialog. The panel pins the LIGHT palette so it stays a light surface in dark mode. */
+.dlg.wiz { position: relative; display: block; overflow: hidden; width: min(1280px, calc(100vw - 32px), calc((100vh - 32px) * 1.6)); max-width: none; max-height: none; aspect-ratio: 8 / 5; border: 0; container-type: inline-size; background: #1F2A66 url("../../assets/wizard-bg.png") center / 100% 100% no-repeat; }
+.wiz__panel { --surface: #FFFFFF; --text: #1B1C24; --text-2: #4A4B55; --border: #DEE0E8; --border-2: #A9ADC2; --hover: #E7E9F1; --accent: #313A75; --accent-d: #252D5E; --accent-l: #7882BA; --danger: #B3261E; color-scheme: light; position: absolute; left: 31.2%; right: 0; top: 0; bottom: 0; display: flex; flex-direction: column; padding: 4cqw 4cqw 3cqw; background: #FFFFFF; color: var(--text); font-size: max(12px, 1.25cqw); line-height: 1.5; }
+.wiz__head { flex: none; }
+.wiz__title { margin: 0; font-size: max(18px, 2.4cqw); font-weight: 600; line-height: 1.2; color: var(--accent); overflow-wrap: anywhere; outline: 0; }
+.wiz__steps { list-style: none; margin: 1.4cqw 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: .5cqw 1.6cqw; font-size: max(11px, 1.05cqw); color: var(--text-2); }
+.wiz__steps li { display: inline-flex; align-items: center; gap: .5cqw; }
+.wiz__num { display: grid; place-items: center; flex: none; width: max(16px, 1.7cqw); height: max(16px, 1.7cqw); border: 1px solid var(--border-2); border-radius: 50%; font-size: .9em; line-height: 1; }
+.wiz__num .ic { width: 70%; height: 70%; }
+.wiz__steps li.is-done .wiz__num { background: var(--accent-l); border-color: var(--accent-l); color: #fff; }
+.wiz__steps li[aria-current="step"] { color: var(--accent); font-weight: 600; }
+.wiz__steps li[aria-current="step"] .wiz__num { background: var(--accent); border-color: var(--accent); color: #fff; }
+.wiz__body { flex: 1; min-height: 0; margin: 2cqw 0 1cqw; padding: .3cqw .8cqw; overflow-y: auto; overflow-x: hidden; overflow-wrap: anywhere; word-break: break-word; }
+.wiz__body p { margin: 0 0 1em; } .wiz__body .muted { color: var(--text-2); }
+.wiz__body pre, .wiz__body code { font-family: var(--mono); white-space: pre-wrap; overflow-wrap: anywhere; }
+.wiz__status { flex: none; color: var(--text-2); overflow-wrap: anywhere; } .wiz__status.is-error { color: var(--danger); margin-bottom: .8cqw; }
+.wiz__foot { flex: none; display: flex; flex-wrap: wrap; align-items: center; gap: 1cqw; padding-top: 1.2cqw; border-top: 1px solid var(--border); }
+.wiz__foot .wiz__skip { margin-left: auto; }
+.wiz .btn { height: auto; min-height: max(28px, 2.9cqw); max-width: 100%; padding: 3px max(12px, 1.6cqw); white-space: normal; text-align: center; font-size: max(12px, 1.2cqw); color: var(--text); background: var(--surface); border-color: var(--border-2); }
+.wiz .btn:hover:not(:disabled) { background: var(--hover); }
+.dlg.wiz .wiz__panel .btn--primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.dlg.wiz .wiz__panel .btn--primary:hover:not(:disabled) { background: var(--accent-d); }
+.wiz :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.wiz .wiz__body:focus-visible { outline-offset: -2px; }
+.wiz .btn .ic { width: 1.1em; height: 1.1em; }
+/* setup wizard: Screen B (Detect LaTeX) */
+.wiz__load { display: flex; align-items: center; gap: .8cqw; color: var(--text-2); } .wiz__load .ic { flex: none; animation: rpe-compile-spin .8s linear infinite; }
+.wiz__list { list-style: none; margin: 0 0 1.2em; padding: 0; display: grid; gap: .6cqw; }
+.wiz__comp { padding: .7cqw 1cqw; border: 1px solid var(--border); border-radius: var(--r); }
+.wiz__compname { display: flex; flex-wrap: wrap; align-items: center; gap: .6cqw; font-weight: 600; }
+.wiz__tag { padding: 0 .7em; border-radius: 999px; background: var(--hover); color: var(--accent); font-size: .85em; font-weight: 500; }
+.wiz__body .wiz__path { display: block; margin-top: .2em; color: var(--text-2); font-size: .92em; white-space: pre-wrap; overflow-wrap: anywhere; word-break: break-all; } .wiz__path.is-error { color: var(--danger); }
+.wiz__note { display: flex; align-items: flex-start; gap: .8cqw; margin: 0 0 1em; padding: .8cqw 1cqw; border: 1px solid; border-radius: var(--r); }
+.wiz__note .ic { flex: none; width: 1.3em; height: 1.3em; margin-top: .1em; } .wiz__note > span { min-width: 0; }
+.wiz__note--ok { color: #2F5B33; background: #F2F8F2; border-color: #CFE0D0; } .wiz__note--warn { color: #7A5A1E; background: #FBF1DE; border-color: #EBD6AC; }
+.wiz__err { max-height: 12em; overflow: auto; margin: 0 0 1em; padding: .8cqw 1cqw; border: 1px solid var(--border-2); border-radius: var(--r); background: #F6F6FA; font-size: .92em; }
+.wiz__actions { display: flex; flex-wrap: wrap; gap: 1cqw; margin-top: 1.2em; }
+/* setup wizard: Screen C (Install LaTeX) */
+.wiz__ol { margin: 0 0 1em; padding-left: 1.6em; } .wiz__ol li { margin: 0 0 .4em; }
+.wiz__h { margin: 1em 0 .3em; font-size: 1em; font-weight: 600; color: var(--accent); }
+.wiz__pkgs { list-style: none; margin: 0 0 .8em; padding: 0; display: grid; gap: .25em; }
+.wiz__cmd { margin: .3em 0 .6em; padding: .8cqw 1cqw; border: 1px solid var(--border-2); border-radius: var(--r); background: #F6F6FA; font-size: .95em; white-space: pre-wrap; overflow-wrap: anywhere; word-break: break-all; user-select: text; -webkit-user-select: text; }
+.wiz__field { display: flex; flex-direction: column; gap: .3em; max-width: 28em; margin: 0 0 1em; } .wiz__field label { font-weight: 600; }
+.wiz__radios { border: 0; margin: 0 0 1em; padding: 0; } .wiz__radios legend { padding: 0; font-weight: 600; }
+.wiz__radios label { display: flex; align-items: flex-start; gap: .6em; margin: .3em 0; cursor: pointer; } .wiz__radios input { margin-top: .3em; accent-color: var(--accent); }
+.wiz__links .wiz__actions { margin-top: .6em; } .wiz__linkmsg { margin: .8em 0 0; color: var(--danger); }
+.wiz__body .wiz__url { display: block; margin-top: .2em; color: var(--text); user-select: text; -webkit-user-select: text; word-break: break-all; }
+.wiz__more { margin: 1em 0 0; padding-top: .6em; border-top: 1px solid var(--border); } .wiz__more summary { cursor: pointer; font-weight: 600; color: var(--accent); }
+/* setup wizard: Screen D (Verify) */
+.wiz__stages { list-style: none; margin: 0 0 1.2em; padding: 0; display: grid; gap: .5cqw; }
+.wiz__stage { display: flex; align-items: center; gap: .8cqw; color: var(--text-2); }
+.wiz__sticon { flex: none; display: inline-flex; align-items: center; justify-content: center; width: 1.4em; height: 1.4em; } .wiz__sticon .ic { width: 1.1em; height: 1.1em; }
+.wiz__stat { margin-left: auto; font-size: .9em; }
+.wiz__stage.is-run { color: var(--text); font-weight: 600; } .wiz__stage.is-run .ic { animation: rpe-compile-spin .8s linear infinite; }
+.wiz__stage.is-done .ic { color: #2F5B33; } .wiz__stage.is-fail, .wiz__stage.is-fail .ic { color: var(--danger); }
+.wiz__note--err { color: #8A2A2A; background: #FBEDED; border-color: #EBC5C5; }
+/* LaTeX setup status (Settings > LaTeX Setup, wizard Welcome when re-run) */
+.lx-stat { display: grid; grid-template-columns: max-content 1fr; gap: 2px 12px; margin-top: 4px; font-size: 12.5px; } .lx-stat > span:nth-child(odd) { opacity: .7; } .lx-stat code { word-break: break-all; }
+.wiz__cur { margin-top: 10px; } .wiz__cur p { margin: 0 0 2px; }
+/* setup wizard: narrow windows drop the art and use the whole dialog, so nothing is squeezed or clipped */
+@media (max-width: 760px) {
+  .dlg.wiz { width: calc(100vw - 32px); height: calc(100vh - 32px); aspect-ratio: auto; background: #FFFFFF; }
+  .wiz__panel { left: 0; padding: 16px; }
+  .wiz__steps { gap: 4px 12px; margin-top: 10px; } .wiz__body { margin: 12px 0 8px; padding: 2px 4px; }
+  .wiz__foot, .wiz__actions { gap: 8px; } .wiz__foot { padding-top: 10px; } .wiz__status.is-error { margin-bottom: 6px; }
+  .wiz__comp, .wiz__note { padding: 8px 10px; } .wiz__list { gap: 6px; }
+}
+/* setup wizard in the desktop shell: its own compact, fixed-size window (main.js wizard mode) with its own top bar (drag strip + minimize / close, no maximize) */
+.dlg-backdrop.wiz-win { padding: 0; overflow: hidden; }
+.wiz-win .dlg.wiz { width: 100vw; height: 100vh; max-width: none; max-height: none; aspect-ratio: auto; border-radius: 0; box-shadow: none; transform: none; background-size: cover; }
+.wiz__drag { position: absolute; left: 0; right: 0; top: 0; height: 32px; z-index: 2; -webkit-app-region: drag; }   /* above the white panel (below the window buttons, z 3), so the whole top strip drags */
+.wiz__wc { position: absolute; top: 2px; right: 4px; z-index: 3; display: flex; gap: 2px; -webkit-app-region: no-drag; }
+.wiz-win .wiz__panel { padding: 40px 28px 18px; font-size: 13px; }
+.wiz-win .wiz__title { font-size: 21px; }
+.wiz-win .wiz__steps { margin-top: 8px; gap: 4px 14px; font-size: 11.5px; }
+.wiz-win .wiz__num { width: 17px; height: 17px; }
+.wiz-win .wiz__body { margin: 12px 0 6px; padding: 2px 6px 2px 2px; }
+.wiz-win .wiz__foot { gap: 8px; padding-top: 10px; }
+.wiz-win .wiz__actions { gap: 8px; margin-top: 12px; }
+.wiz-win .btn { min-height: 30px; padding: 3px 14px; font-size: 13px; }
+.wiz-win .wiz__list, .wiz-win .wiz__stages { gap: 6px; }
+.wiz-win .wiz__comp, .wiz-win .wiz__note, .wiz-win .wiz__cmd, .wiz-win .wiz__err { padding: 7px 10px; }
+

@@ -1,0 +1,22 @@
+import { CH } from '../../../shared/channels.js';
+import { invoke, on } from './ipc.js';
+
+export const open = (path) => invoke(CH.WORKSPACE_OPEN, path ? { path } : undefined);
+export const close = () => invoke(CH.WORKSPACE_CLOSE);
+export const list = () => invoke(CH.WORKSPACE_LIST);
+export const recent = () => invoke(CH.WORKSPACE_RECENT);
+export const listFiles = (o) => invoke(CH.WORKSPACE_LIST_FILES, o);
+export const forget = (root) => invoke(CH.WORKSPACE_REMOVE, { root });
+export const listDir = (path, o) => invoke(CH.FS_LIST_DIR, { path, ...o });
+export const createFile = (dir, name) => invoke(CH.FS_CREATE_FILE, { dir, name });
+export const createFolder = (dir, name) => invoke(CH.FS_CREATE_FOLDER, { dir, name });
+export const rename = (path, name) => invoke(CH.FS_RENAME, { path, name });
+export const move = (paths, toDir) => invoke(CH.FS_MOVE, { paths, toDir });
+export const copy = (paths, toDir) => invoke(CH.FS_COPY, { paths, toDir });
+export const del = (paths) => invoke(CH.FS_DELETE, { paths });
+export const duplicate = (path) => invoke(CH.FS_DUPLICATE, { path });
+export const reveal = (path) => invoke(CH.DOC_REVEAL, { path });
+export const openExternal = (path) => invoke(CH.DOC_OPEN_EXTERNAL, { path });
+export const index = (op, o) => invoke(CH.WORKSPACE_INDEX, { op, ...o });
+export const onIndexProgress = (fn) => on(CH.WORKSPACE_INDEX_PROGRESS, fn);
+export const onTreeChange = (fn) => on(CH.FS_TREE_CHANGE, fn);

@@ -1,0 +1,4 @@
+#prev[data-pv-theme=gold]{--pv-tf:Georgia,"Times New Roman",serif;--pv-hf:Georgia,"Times New Roman",serif;--pv-hw:500;--pv-link:var(--accent-d);--pv-quote:var(--accent);--pv-rule:var(--border);--pv-code-bg:var(--hover);--pv-stripe:color-mix(in srgb,var(--accent) 7%,transparent)}
+#prev[data-pv-theme=gold] h2{padding-bottom:.15em;border-bottom:1px solid var(--pv-rule)}
+#prev[data-pv-theme=gold] h3{font-style:italic;color:var(--pv-link)}
+#prev[data-pv-theme=gold] blockquote{font-style:italic}

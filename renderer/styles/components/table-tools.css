@@ -1,0 +1,12 @@
+/* Insert > Table size popover and custom size dialog */
+.tb-pop { padding: 8px; display: flex; flex-direction: column; gap: 6px; }
+.tb-grid { display: grid; grid-template-columns: repeat(10, 18px); gap: 2px; }
+.tb-cell { width: 18px; height: 18px; padding: 0; background: var(--bg); border: 1px solid var(--border-2); border-radius: var(--r); cursor: pointer; }
+.tb-cell.is-on { background: var(--accent, #b8892b); border-color: var(--accent, #b8892b); }
+.tb-cell:focus-visible { outline: 2px solid var(--accent, #b8892b); outline-offset: 1px; }
+.tb-label { font-size: 12px; min-height: 16px; color: var(--text); }
+.tb-more { text-align: left; padding: 5px 8px; font: inherit; color: var(--text); background: none; border: 0; border-top: 1px solid var(--border-2); cursor: pointer; }
+.tb-more:hover, .tb-more:focus-visible { background: var(--hover, rgba(127, 127, 127, .15)); outline: none; }
+.tb-field { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 8px; }
+.tb-field input { width: 80px; padding: 5px 8px; font: inherit; color: var(--text); background: var(--bg); border: 1px solid var(--border-2); border-radius: var(--r); }
+.tb-err { min-height: 16px; font-size: 12px; color: var(--danger, #b3261e); }

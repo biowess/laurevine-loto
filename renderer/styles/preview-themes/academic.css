@@ -1,0 +1,10 @@
+#prev[data-pv-theme=academic]{--pv-tf:"TeX Gyre Termes","Times New Roman",Times,serif;--pv-hf:"TeX Gyre Termes","Times New Roman",Times,serif;--pv-hw:700;--pv-scale:1.06;--pv-ls:0;--pv-h1:1.9em;--pv-h2:1.3em;--pv-h3:1.1em;--pv-r:0px;--pv-gap:.85em;--pv-mono:"Source Code Pro",var(--mono)}
+#prev[data-pv-theme=academic] p,#prev[data-pv-theme=academic] li{text-align:justify;hyphens:auto}
+#prev[data-pv-theme=academic] h1{text-align:center}
+#prev[data-pv-theme=academic] h2{font-variant:small-caps;letter-spacing:.03em}
+#prev[data-pv-theme=academic] h3{font-style:italic;font-weight:600}
+#prev[data-pv-theme=academic] blockquote{margin:1em 2.5em;padding:0;border-left:0;background:none;color:inherit;font-size:.95em}
+#prev[data-pv-theme=academic] .lt-callout-title,#prev[data-pv-theme=academic] figcaption{font-family:var(--pv-tf)}
+#prev[data-pv-theme=academic][data-pv-tbl=plain] th{background:none;border-top:1.5px solid currentColor;border-bottom:1px solid currentColor}
+#prev[data-pv-theme=academic][data-pv-tbl=plain] td{border-bottom:0}
+#prev[data-pv-theme=academic][data-pv-tbl=plain] tbody tr:last-child td{border-bottom:1.5px solid currentColor}

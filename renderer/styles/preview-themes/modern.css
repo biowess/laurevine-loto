@@ -1,0 +1,8 @@
+#prev[data-pv-theme=modern]{--pv-bg:var(--surface);--pv-tf:"Inter","Spline Sans",var(--pv-nfb);--pv-hf:"Inter",var(--pv-nfb);--pv-hw:700;--pv-scale:.94;--pv-ls:-.022em;--pv-h1:2.4em;--pv-h2:1.6em;--pv-h3:1.25em;--pv-r:10px}
+#prev[data-pv-theme=modern] h1{font-weight:800}
+#prev[data-pv-theme=modern] a{font-weight:500;text-decoration:none;border-bottom:1.5px solid color-mix(in srgb,currentColor 30%,transparent)}
+#prev[data-pv-theme=modern] a:hover{border-bottom-color:currentColor}
+#prev[data-pv-theme=modern] blockquote{padding:.9em 1.2em;border-left:0;border-radius:var(--pv-r);background:color-mix(in srgb,var(--accent) 8%,transparent);color:var(--text)}
+#prev[data-pv-theme=modern] :not(pre)>code{border:0;background:color-mix(in srgb,var(--accent) 11%,transparent)}
+#prev[data-pv-theme=modern] .lt-code{border:0}
+#prev[data-pv-theme=modern] .lt-callout{border-left-width:1px;box-shadow:inset 3px 0 0 var(--c)}

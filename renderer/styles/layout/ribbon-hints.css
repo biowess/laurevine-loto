@@ -1,0 +1,9 @@
+/* ribbon.css: planned-command hint, contextual tab underline, collapse. Builds on Plum's .tab/.rbtn/.rgroup rules. */
+.rbtn.is-planned { opacity: .6; }
+.rbtn.is-planned .rbtn__label { color: var(--text-2); }
+.rbtn.is-planned:hover:not(:disabled) { background: transparent; }
+.rbtn:focus-visible, .tab:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.md.ribbon-collapsed { --ribbon-h: 0px; }
+.ribbon-collapsed .tabrow__toggle .ic { transform: rotate(180deg); }
+.ribbon-collapsed:not(.ribbon-peek) .tab.is-active{background:transparent;border-color:transparent;border-bottom:0;margin-bottom:0;height:31px;font-weight:inherit;color:var(--text);z-index:auto}
+.ribbon-collapsed:not(.ribbon-peek) .tab.is-active:hover{background:var(--hover)}

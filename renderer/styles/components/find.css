@@ -1,0 +1,19 @@
+.md-src.md-cm, .lv-find-host { position: relative; }
+.lv-find-note { padding: 0 4px 2px; font-size: 11px; opacity: .7; }
+.lv-find { position: absolute; top: 6px; right: 18px; z-index: 6; display: flex; flex-direction: column; gap: 4px; padding: 5px; max-width: calc(100% - 28px); background: var(--surface); border: 1px solid var(--border-2); border-radius: var(--r); box-shadow: var(--shadow-pop); font: 12px var(--font); color: var(--text); }
+.lv-find[hidden], .lv-find [hidden] { display: none; }
+.lv-find-row { display: flex; align-items: center; gap: 2px; }
+.lv-find input { flex: 1; min-width: 90px; width: 190px; height: 24px; padding: 0 6px; font: inherit; color: var(--text); background: var(--app-bg); border: 1px solid var(--border); border-radius: var(--r); }
+.lv-find input:focus { outline: 1px solid var(--accent); border-color: var(--accent); }
+.lv-find input[aria-invalid="true"], .lv-find.is-none .lv-find-q { border-color: var(--danger); }
+.lv-find-b { min-width: 24px; height: 24px; padding: 0 4px; display: inline-flex; align-items: center; justify-content: center; gap: 2px; font: inherit; color: var(--text); background: none; border: 1px solid transparent; border-radius: var(--r); cursor: pointer; }
+.lv-find-b:hover:not(:disabled) { background: var(--hover); }
+.lv-find-b:disabled { opacity: .4; cursor: default; }
+.lv-find-b[aria-pressed="true"] { background: var(--sel-bg); border-color: var(--sel-border); color: var(--accent); }
+.lv-find-t { font-family: var(--mono); font-size: 11px; }
+.lv-find-x svg, .lv-find-b svg { width: 14px; height: 14px; }
+.lv-find-x[aria-pressed="true"] svg { transform: rotate(90deg); }
+.lv-find-count { min-width: 56px; padding: 0 4px; text-align: center; color: var(--text-2); white-space: nowrap; }
+.lv-find-err { padding: 0 4px 2px 28px; color: var(--danger); font-size: 11px; }
+::highlight(lv-find) { background-color: rgba(120, 130, 186, .3); background-color: color-mix(in srgb, var(--accent-l) 38%, transparent); }
+::highlight(lv-find-cur) { background-color: rgba(49, 58, 117, .45); background-color: color-mix(in srgb, var(--accent) 50%, transparent); }

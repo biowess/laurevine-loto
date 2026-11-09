@@ -1,0 +1,24 @@
+@media (forced-colors: active) {
+  .tbtn, .rbtn, .btn, .md-seg button, .md-prof, .lv-find-b, .lv-find-t, .sr__tg, .sr__mb, .pr__x, .dlg__close, .toast__action, .toast__x, .md-sw button, .md-bnav button, .md-stnav button, .lv-stat { outline: 1px solid ButtonText; outline-offset: -1px; }
+  :is(button, [role=tab], [role=option], [role=treeitem], .md-row, .md-tab):is(.is-on, .is-active, [aria-selected=true], [aria-pressed=true], [aria-checked=true], [aria-current=page], [aria-current=true]):not(.md-group) {
+    forced-color-adjust: none; background: Highlight !important; color: HighlightText !important; outline: 1px solid HighlightText; outline-offset: -2px;
+  }
+  :is(button, [role=tab], [role=option], [role=treeitem], .md-row, .md-tab):is(.is-on, .is-active, [aria-selected=true], [aria-pressed=true], [aria-checked=true], [aria-current=page], [aria-current=true]):not(.md-group) * { color: inherit !important; }
+  :is(button, [role=menuitem], [role=menuitemcheckbox], [role=option]):is(:disabled, [aria-disabled=true], .is-off) { color: GrayText !important; outline-color: GrayText; }
+  :is([role=dialog], [role=menu], [role=listbox]):not(.md-backstage, .md-studio, .pal__body), .popover, .toast, .lv-find { border: 1px solid CanvasText; }
+  .md-grip, .md-div, .md-gdiv, .menu__sep { forced-color-adjust: none; background: ButtonBorder; }
+  .md-grip:hover, .md-div:hover, .md-gdiv:hover, .md-div.is-drag, .md-gdiv.is-drag, .md-div:focus-visible, .md-gdiv:focus-visible { background: Highlight; }
+  .save-state .dot, .md-ok i, .md-tab .dot, .lv-pf__mod { forced-color-adjust: none; background: CanvasText; }
+  .swatch, .lv-pvbox, .lv-thumbs, input[type=color] { forced-color-adjust: none; }
+  .swatch { border: 1px solid CanvasText; }
+  ::highlight(lv-find) { background-color: Mark; color: MarkText; }
+  ::highlight(lv-find-cur) { background-color: Highlight; color: HighlightText; }
+  ::highlight(lv-dim) { color: GrayText; }
+  ::highlight(lv-prob-error) { text-decoration: underline wavy; }
+  ::highlight(lv-prob-warning) { text-decoration: underline dashed; }
+  ::highlight(lv-prob-info) { text-decoration: underline dotted; }
+  .md-cm .cm-editor .cm-selectionLayer .cm-selectionBackground { forced-color-adjust: none; background: Highlight !important; }
+  .md-cm .cm-editor .cm-content ::selection { background: Highlight !important; color: HighlightText !important; }
+  .md-cm .cm-editor .cm-cursor, .md-cm .cm-editor .cm-dropCursor { border-left-color: CanvasText; }
+  .md-cm .cm-line.nv-flash { outline: 2px solid Highlight; }
+}
